@@ -1,0 +1,3 @@
+/home/steven/Escritorio/Protecto1_2023/MIA_201903974_Proyecto1_S1_2023/cmake-build-debug/CMakeFiles/MIA_201903974_Proyecto1_S1_2023.dir
+/home/steven/Escritorio/Protecto1_2023/MIA_201903974_Proyecto1_S1_2023/cmake-build-debug/CMakeFiles/edit_cache.dir
+/home/steven/Escritorio/Protecto1_2023/MIA_201903974_Proyecto1_S1_2023/cmake-build-debug/CMakeFiles/rebuild_cache.dir

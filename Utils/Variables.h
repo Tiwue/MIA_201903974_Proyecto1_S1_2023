@@ -1,0 +1,8 @@
+
+
+#ifndef MIA_PROYECTO1_VARIABLES_H
+#define MIA_PROYECTO1_VARIABLES_H
+
+extern int number_id;
+
+#endif //MIA_PROYECTO1_VARIABLES_H
