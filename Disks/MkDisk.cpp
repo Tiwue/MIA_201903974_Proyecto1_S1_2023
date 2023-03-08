@@ -3,6 +3,13 @@
 #include "MkDisk.h"
 #include "../Utils/Functions.h"
 #include "../Utils/Variables.h"
+#include <stdlib.h>
+#include <string>
+#include <stdio.h>
+#include <libgen.h>
+#include <cstdlib>
+#include <cstring>
+#include <fstream>
 
 
 
@@ -25,21 +32,34 @@ void MkDisk::executeDisk() {
 
 
 void MkDisk::createDisk() {
+    char path1[255];
+    std::string comando = "sudo mkdir -p \'";
+    strcpy(path1,_path.c_str());
+    comando += dirname(path1);
+    comando += '\'';
+    std::cout<<comando<<std::endl;
+    system(comando.c_str());
+    if (std::string(path1)!="/home" || std::string(path1)!="/" ||std::string(path1)!="/home/steven" ){
+        comando = "sudo chmod -R 777 \'";
+        comando += dirname(path1);
+        comando += '\'';
+        system(comando.c_str());
+    }
 
     char charPath[_path.size() + 1];
     strcpy(charPath, _path.c_str());
-    FILE *file = nullptr;
+    FILE *file = NULL;
     file = fopen(charPath, "r");
-    if (file != nullptr) {
+    if (file != NULL) {
         return coutError("Error: El disco ya existe.", file);
     }
     //Tamaño para distintas unidades que se piden
     int tam = getSize(_unit, _size);
     file = fopen(charPath, "wb");
+
     fwrite("\0", 1, 1, file);
     fseek(file, tam, SEEK_SET);
     fwrite("\0", 1, 1, file);
-
     MBR mbr{};
     mbr.mbr_tamano = tam;
     mbr.mbr_fecha_creacion = getCurrentTime();
@@ -79,7 +99,7 @@ void MkDisk::createDisk() {
     fseek(file, 0, SEEK_SET);
     fwrite(&mbr, sizeof(MBR), 1, file);
     fclose(file);
-    file = nullptr;
+    file = NULL;
 }
 
 

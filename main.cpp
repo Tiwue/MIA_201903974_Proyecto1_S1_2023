@@ -55,7 +55,7 @@ int main() {
 void executeAnalyzer(std::string filename){
     parser_driver driver;
     if (driver.parse(filename))
-        std::cout << "\033[1;32mSuccessfully\033[0m\n";
+        std::cout << "\033[1;32mDone\033[0m\n";
 }
 
 

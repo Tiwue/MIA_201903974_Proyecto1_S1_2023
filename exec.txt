@@ -1,0 +1,1 @@
+mkdisk >size=30  >path="/home/user/Discos Disponibles/Disco3.dsk"
