@@ -18,7 +18,6 @@ int main() {
     std::string input, output;
     std::string filename = "command.txt";
     while (true) {
-        std::cout<< "INICIO "<<std::endl;
         std::cout<<">> ";
 
         getline(std::cin, input);
@@ -55,7 +54,6 @@ int main() {
 
 void executeAnalyzer(std::string filename){
     parser_driver driver;
-    std::cout << "\033[1;32mLLamada analizador\033[0m\n";
     if (driver.parse(filename))
         std::cout << "\033[1;32mSuccessfully\033[0m\n";
 }

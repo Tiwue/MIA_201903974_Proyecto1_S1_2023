@@ -17,18 +17,45 @@ __attribute__((unused)) bool existLogicPartition(EBR _ebr, std::string _name, FI
 }
 
 char existPartition(MBR _mbr,std::string _name,FILE *_file) {
-    for (int i = 0; i < 4; i++) {
-        if (_mbr.mbr_partition[i].part_name == _name)
-            return _mbr.mbr_partition[i].part_type;
-        if (_mbr.mbr_partition[i].part_type == 'E') {
+
+        if (_mbr.mbr_partition_1.part_name == _name)
+            return _mbr.mbr_partition_1.part_type;
+        if (_mbr.mbr_partition_2.part_name == _name)
+            return _mbr.mbr_partition_2.part_type;
+        if (_mbr.mbr_partition_3.part_name == _name)
+            return _mbr.mbr_partition_3.part_type;
+        if (_mbr.mbr_partition_4.part_name == _name)
+            return _mbr.mbr_partition_4.part_type;
+        if (_mbr.mbr_partition_1.part_type == 'E') {
             EBR ebr_inicial;
-            fseek(_file, _mbr.mbr_partition[i].part_start, SEEK_SET);
+            fseek(_file, _mbr.mbr_partition_1.part_start, SEEK_SET);
             fread(&ebr_inicial, sizeof(EBR), 1, _file);
             if (existLogicPartition(ebr_inicial,  _name, _file))
                 return 'L';
-            else
-                continue;
         }
+
+        if (_mbr.mbr_partition_2.part_type == 'E') {
+            EBR ebr_inicial;
+            fseek(_file, _mbr.mbr_partition_2.part_start, SEEK_SET);
+            fread(&ebr_inicial, sizeof(EBR), 1, _file);
+            if (existLogicPartition(ebr_inicial,  _name, _file))
+                return 'L';
+        }
+
+        if (_mbr.mbr_partition_3.part_type == 'E') {
+            EBR ebr_inicial;
+            fseek(_file, _mbr.mbr_partition_3.part_start, SEEK_SET);
+            fread(&ebr_inicial, sizeof(EBR), 1, _file);
+            if (existLogicPartition(ebr_inicial,  _name, _file))
+                return 'L';
+        }
+
+        if (_mbr.mbr_partition_4.part_type == 'E') {
+            EBR ebr_inicial;
+            fseek(_file, _mbr.mbr_partition_4.part_start, SEEK_SET);
+            fread(&ebr_inicial, sizeof(EBR), 1, _file);
+            if (existLogicPartition(ebr_inicial,  _name, _file))
+                return 'L';
     }
     return '0';
 }
@@ -56,34 +83,54 @@ EBR getEBRprevious(EBR _ebr, int _n, FILE *_file) {
 }
 
 partition getPartition(MBR _mbr, std::string _name, FILE *_file) {
-    for (int i = 0; i < 4; i++) {
-        if (_mbr.mbr_partition[i].part_name == _name)
-            return _mbr.mbr_partition[i];
-    }
+    if (_mbr.mbr_partition_1.part_name == _name)
+        return _mbr.mbr_partition_1;
+    if (_mbr.mbr_partition_2.part_name == _name)
+        return _mbr.mbr_partition_2;
+    if (_mbr.mbr_partition_3.part_name == _name)
+        return _mbr.mbr_partition_3;
+    if (_mbr.mbr_partition_3.part_name == _name)
+        return _mbr.mbr_partition_3;
+
     return {};
 }
 
 int getPartitionIndex(MBR _mbr, std::string _name, FILE *_file) {
-    for (int i = 0; i < 4; i++) {
-        if (_mbr.mbr_partition[i].part_name == _name)
-            return i;
-    }
+    if (_mbr.mbr_partition_1.part_name == _name)
+        return 0;
+    if (_mbr.mbr_partition_2.part_name == _name)
+        return 1;
+    if (_mbr.mbr_partition_3.part_name == _name)
+        return 2;
+    if (_mbr.mbr_partition_4.part_name == _name)
+        return 3;
     return -1;
 }
 
 int particionDisponible(MBR _mbr) {
-    for (int i = 0; i < 4; i++) {
-        if (_mbr.mbr_partition[i].part_status == '0')
-            return i;
-    }
+
+    if (_mbr.mbr_partition_1.part_status == '0')
+        return 0;
+    if (_mbr.mbr_partition_2.part_status == '0')
+        return 1;
+    if (_mbr.mbr_partition_3.part_status == '0')
+        return 2;
+    if (_mbr.mbr_partition_4.part_status == '0')
+        return 3;
     return -1;
 }
 
 int existeExtendida(MBR _mbr) {
-    for (int i = 0; i < 4; i++) {
-        if (_mbr.mbr_partition[i].part_type == 'E')
-            return i;
-    }
+
+        if (_mbr.mbr_partition_1.part_type == 'E')
+            return 0;
+    if (_mbr.mbr_partition_2.part_type == 'E')
+        return 1;
+    if (_mbr.mbr_partition_3.part_type == 'E')
+        return 2;
+    if (_mbr.mbr_partition_4.part_type == 'E')
+        return 3;
+
     return -1;
 }
 
@@ -99,10 +146,15 @@ EBR getLastEBR(EBR _ebr, FILE *pFile) {
 }
 
 bool existeNombreMBR(MBR _mbr, std::string _name) {
-    for (int i = 0; i < 4; i++) {
-        if (_mbr.mbr_partition[i].part_name == _name)
-            return true;
-    }
+
+    if (_mbr.mbr_partition_1.part_name == _name)
+        return true;
+    if (_mbr.mbr_partition_2.part_name == _name)
+        return true;
+    if (_mbr.mbr_partition_3.part_name == _name)
+        return true;
+    if (_mbr.mbr_partition_4.part_name == _name)
+        return true;
     return false;
 }
 
@@ -119,14 +171,17 @@ bool existeNombreEBR(EBR _ebr, std::string _name, FILE *_file) {
 
 int getPartitionsSize(MBR _mbr) {
     int s = 0;
-    for (int i = 0; i < 4; i++) {
-        s += _mbr.mbr_partition[i].part_size;
-    }
+
+    s += _mbr.mbr_partition_1.part_s;
+    s += _mbr.mbr_partition_2.part_s;
+    s += _mbr.mbr_partition_3.part_s;
+    s += _mbr.mbr_partition_4.part_s;
+
     return s;
 }
 
 int getLogicsSize(EBR _ebr, int _s, FILE *_file) {
-    _s += _ebr.part_size;
+    _s += _ebr.part_s;
     if (_ebr.part_next == -1)
         return _s;
     else {
