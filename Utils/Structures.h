@@ -52,4 +52,24 @@ struct ParticionesMontadas {
     partition particion;
     EBR logica;
 };
+
+struct Superbloque {
+    int s_filesystem_type;   // Guarda el número que identifica el sistema de archivos utilizado
+    int s_inodes_count;      // Guarda el número total de inodos
+    int s_blocks_count;      // Guarda el número total de bloques
+    int s_free_blocks_count; // Contiene el número de bloques libres
+    int s_free_inodes_count; // Contiene el número de inodos libres
+    time_t s_mtime;          // Última fecha en el que el sistema fue montado
+    time_t s_umtime;         // Última fecha en que el sistema fue desmontado
+    int s_mnt_count = 0;     // Indica cuantas veces se ha montado el sistema
+    int s_magic;             // Valor que identifica al sistema de archivos, tendrá el valor 0xEF53
+    int s_inode_s;        // Tamaño del inodo
+    int s_block_s;        // Tamaño del bloque
+    int s_first_ino;         // Primer inodo libre
+    int s_first_blo;         // Primer bloque libre
+    int s_bm_inode_start;    // Guardará el inicio del bitmap de inodos
+    int s_bm_block_start;    // Guardará el inicio del bitmap de bloques
+    int s_inode_start;       // Guardará el inicio de la tabla de inodos
+    int s_block_start;       // Guardará el inicio de la tabla de bloques
+};
 #endif

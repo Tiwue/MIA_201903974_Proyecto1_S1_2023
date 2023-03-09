@@ -4,4 +4,4 @@ project(MIA_201903974_Proyecto1_S1_2023)
 set(CMAKE_CXX_STANDARD 17)
 link_libraries(stdc++fs)
 
-add_executable(MIA_201903974_Proyecto1_S1_2023 main.cpp Utils/Builder.h Utils/Variables.h Disks/MkDisk.cpp Disks/DiskFunctions.cpp Disks/RmDisk.cpp Utils/Functions.cpp Analyzer/driver.cpp Analyzer/parser.tab.cc Analyzer/position.hh Analyzer/scanner.cpp Analyzer/stack.hh Utils/Variables.cpp)
+add_executable(MIA_201903974_Proyecto1_S1_2023 main.cpp Utils/Builder.h Utils/Variables.h Disks/MkDisk.cpp Disks/DiskFunctions.cpp Disks/RmDisk.cpp Utils/Functions.cpp Analyzer/driver.cpp Analyzer/parser.tab.cc Analyzer/position.hh Analyzer/scanner.cpp Analyzer/stack.hh Utils/Variables.cpp Partitions/FDisk.cpp)

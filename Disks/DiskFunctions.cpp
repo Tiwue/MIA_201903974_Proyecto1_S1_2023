@@ -122,7 +122,7 @@ int particionDisponible(MBR _mbr) {
 
 int existeExtendida(MBR _mbr) {
 
-        if (_mbr.mbr_partition_1.part_type == 'E')
+    if (_mbr.mbr_partition_1.part_type == 'E')
             return 0;
     if (_mbr.mbr_partition_2.part_type == 'E')
         return 1;
