@@ -1,0 +1,25 @@
+digraph G {
+graph[bgcolor="#141D26" margin=0]
+rankdir="TB";
+node [shape=plaintext fontname= "Ubuntu" fontsize="14"];
+edge [style="invis"];
+
+"Disk report" [ label = <<TABLE CELLBORDER="2" BGCOLOR="BLACK" BORDER="2" COLOR="BLACK"  CELLSPACING="0">
+
+<TR><TD BGCOLOR="#1c2833" COLSPAN="100"><FONT POINT-SIZE="20" COLOR="#f2f3f4">Disk Report of: /home/user/Discos Disponibles/Disco3.dsk</FONT></TD></TR><TR>
+
+<TD HEIGHT="150" WIDTH="75" BGCOLOR="#c0392b">MBR</TD>
+
+<TD HEIGHT="160" WIDTH="150" BGCOLOR="#229954">PARTICIÓN 1<br/><br/>Extendida<br/><br/><b>1%</b><br/></TD>
+
+<TD HEIGHT="160" WIDTH="150" BGCOLOR="#2471a3">PARTICIÓN 2<br/><br/>Libre<br/><br/><b>99%</b><br/></TD>
+
+<TD HEIGHT="160" WIDTH="150" BGCOLOR="#5d6d7e">PARTICIÓN 3<br/><br/>Libre<br/><br/><b>99%</b><br/></TD>
+
+<TD HEIGHT="160" WIDTH="150" BGCOLOR="#8e44ad">PARTICIÓN 4<br/><br/>Libre<br/><br/><b>99%</b><br/></TD>
+
+
+</TR>
+
+</TABLE>>];
+}

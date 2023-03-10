@@ -61,7 +61,12 @@
 				8,
 				10,
 				12,
-				13
+				13,
+				14,
+				15,
+				16,
+				17,
+				18
 			]
 		}
 	],
@@ -108,7 +113,12 @@
 				8,
 				10,
 				12,
-				13
+				13,
+				14,
+				15,
+				16,
+				17,
+				18
 			]
 		},
 		{
@@ -202,6 +212,36 @@
 			"backtrace" : 1,
 			"compileGroupIndex" : 0,
 			"path" : "Partitions/FDisk.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "Reports/DiskReport.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "Reports/ReportHandler.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "Reports/ReportFunctions.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "Reports/MBRReport.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "Partitions/Mount.cpp",
 			"sourceGroupIndex" : 0
 		}
 	],

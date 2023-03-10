@@ -200,5 +200,14 @@ DiskId buildID(std::string _id) {
     return disk_id;
 }
 
+int existMountedID(DiskId _disk_id) {
+    for (int i = 0; i < particiones_montadas.size(); i++) {
+        ParticionesMontadas mounted = particiones_montadas[i];
+        if (mounted.id._carnet == _disk_id._carnet && mounted.id._number_id == _disk_id._number_id &&
+            mounted.id._disk_name_id == _disk_id._disk_name_id)
+            return i;
+    }
+    return -1;
+}
 
 

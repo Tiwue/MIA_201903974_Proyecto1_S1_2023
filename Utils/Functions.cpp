@@ -128,14 +128,12 @@ char charType(std::string _type, char _default) {
 char charDelete(std::string _delete) {
     char ndelete;
     transform(_delete.begin(), _delete.end(), _delete.begin(), ::tolower);
-    if (_delete == "fast")
-        ndelete = 'R'; //rápida
-    else if (_delete == "full")
+    if (_delete == "full")
         ndelete = 'C'; //completa
     else if (_delete == "")
         ndelete = 'N'; //no aplica
     else
-        exitIfItFails("Error: parámetro -delete no válido: " + _delete);
+        ndelete = 'N'; //no aplica
     return ndelete;
 }
 

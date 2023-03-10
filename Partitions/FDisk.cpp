@@ -274,6 +274,8 @@ void FDisk::erasePartition(char deleteChar) {
             if (deleteChar == 'C') {
                 fseek(pFile, mbr.mbr_partition_1.part_start + sizeof(partition), SEEK_SET);
                 // fwrite("\0", mbr.mbr_partition[i].part_size - sizeof(partition), 1, pFile);
+            }else{
+                return coutError("Párametro >delete no válido: " + this->varDelete, pFile);
             }
         }else if(i==1){
             mbr.mbr_partition_2.part_fit = mbr.dsk_fit;
@@ -286,6 +288,8 @@ void FDisk::erasePartition(char deleteChar) {
             if (deleteChar == 'C') {
                 fseek(pFile, mbr.mbr_partition_2.part_start + sizeof(partition), SEEK_SET);
                 // fwrite("\0", mbr.mbr_partition[i].part_size - sizeof(partition), 1, pFile);
+            }else{
+                return coutError("Párametro >delete no válido: " + this->varDelete, pFile);
             }
         }else if(i==2){
             mbr.mbr_partition_3.part_fit = mbr.dsk_fit;
@@ -298,6 +302,8 @@ void FDisk::erasePartition(char deleteChar) {
             if (deleteChar == 'C') {
                 fseek(pFile, mbr.mbr_partition_3.part_start + sizeof(partition), SEEK_SET);
                 // fwrite("\0", mbr.mbr_partition[i].part_size - sizeof(partition), 1, pFile);
+                }else{
+                return coutError("Párametro >delete no válido: " + this->varDelete, pFile);
             }
         }else if(i==3){
             mbr.mbr_partition_4.part_fit = mbr.dsk_fit;
@@ -310,6 +316,8 @@ void FDisk::erasePartition(char deleteChar) {
             if (deleteChar == 'C') {
                 fseek(pFile, mbr.mbr_partition_4.part_start + sizeof(partition), SEEK_SET);
                 // fwrite("\0", mbr.mbr_partition[i].part_size - sizeof(partition), 1, pFile);
+            }else{
+                return coutError("Párametro >delete no válido: " + this->varDelete, pFile);
             }
         }
     } else if (type == 'L') //borrar referencia del EBR anterior
@@ -337,7 +345,8 @@ void FDisk::erasePartition(char deleteChar) {
         fwrite(&_ebr_previous, sizeof(EBR), 1, pFile);
         if (deleteChar == 'C') {
             fseek(pFile, _ebr_to_delete.part_start + sizeof(EBR), SEEK_SET);
-
+        }else{
+            return coutError("Párametro >delete no válido: " + this->varDelete, pFile);
         }
     }
     fclose(pFile);

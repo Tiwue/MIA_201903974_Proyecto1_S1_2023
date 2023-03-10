@@ -144,6 +144,8 @@ EXEC: "_exec" PARAMS {x = newCommand("__EXEC",parameters);}
 
 DISCOS: "_MKDISK" PARAMS {x = newCommand("__MKDISK",parameters);}
         | "_RMDISK" PARAMS {x = newCommand("__RMDISK",parameters);}
+        | "_FDISK" PARAMS {x = newCommand("__FDISK",parameters);}
+        | "_MOUNT" PARAMS {x = newCommand("__MOUNT",parameters);}
 ;
 
 REPORT: "_rep" PARAMS {x = newCommand("__REP",parameters);}

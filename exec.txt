@@ -1,1 +1,1 @@
-mkdisk >size=30  >path="/home/user/Discos Disponibles/Disco3.dsk"
+rep >id=741Disco3 >path=/home/user/reports/reporte1.jpg >name=disk

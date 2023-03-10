@@ -109,6 +109,36 @@ build CMakeFiles/MIA_201903974_Proyecto1_S1_2023.dir/Partitions/FDisk.cpp.o: CXX
   OBJECT_DIR = CMakeFiles/MIA_201903974_Proyecto1_S1_2023.dir
   OBJECT_FILE_DIR = CMakeFiles/MIA_201903974_Proyecto1_S1_2023.dir/Partitions
 
+build CMakeFiles/MIA_201903974_Proyecto1_S1_2023.dir/Reports/DiskReport.cpp.o: CXX_COMPILER__MIA_201903974_Proyecto1_S1_2023_Debug /home/steven/Escritorio/Protecto1_2023/MIA_201903974_Proyecto1_S1_2023/Reports/DiskReport.cpp || cmake_object_order_depends_target_MIA_201903974_Proyecto1_S1_2023
+  DEP_FILE = CMakeFiles/MIA_201903974_Proyecto1_S1_2023.dir/Reports/DiskReport.cpp.o.d
+  FLAGS = -g -fdiagnostics-color=always -std=gnu++17
+  OBJECT_DIR = CMakeFiles/MIA_201903974_Proyecto1_S1_2023.dir
+  OBJECT_FILE_DIR = CMakeFiles/MIA_201903974_Proyecto1_S1_2023.dir/Reports
+
+build CMakeFiles/MIA_201903974_Proyecto1_S1_2023.dir/Reports/ReportHandler.cpp.o: CXX_COMPILER__MIA_201903974_Proyecto1_S1_2023_Debug /home/steven/Escritorio/Protecto1_2023/MIA_201903974_Proyecto1_S1_2023/Reports/ReportHandler.cpp || cmake_object_order_depends_target_MIA_201903974_Proyecto1_S1_2023
+  DEP_FILE = CMakeFiles/MIA_201903974_Proyecto1_S1_2023.dir/Reports/ReportHandler.cpp.o.d
+  FLAGS = -g -fdiagnostics-color=always -std=gnu++17
+  OBJECT_DIR = CMakeFiles/MIA_201903974_Proyecto1_S1_2023.dir
+  OBJECT_FILE_DIR = CMakeFiles/MIA_201903974_Proyecto1_S1_2023.dir/Reports
+
+build CMakeFiles/MIA_201903974_Proyecto1_S1_2023.dir/Reports/ReportFunctions.cpp.o: CXX_COMPILER__MIA_201903974_Proyecto1_S1_2023_Debug /home/steven/Escritorio/Protecto1_2023/MIA_201903974_Proyecto1_S1_2023/Reports/ReportFunctions.cpp || cmake_object_order_depends_target_MIA_201903974_Proyecto1_S1_2023
+  DEP_FILE = CMakeFiles/MIA_201903974_Proyecto1_S1_2023.dir/Reports/ReportFunctions.cpp.o.d
+  FLAGS = -g -fdiagnostics-color=always -std=gnu++17
+  OBJECT_DIR = CMakeFiles/MIA_201903974_Proyecto1_S1_2023.dir
+  OBJECT_FILE_DIR = CMakeFiles/MIA_201903974_Proyecto1_S1_2023.dir/Reports
+
+build CMakeFiles/MIA_201903974_Proyecto1_S1_2023.dir/Reports/MBRReport.cpp.o: CXX_COMPILER__MIA_201903974_Proyecto1_S1_2023_Debug /home/steven/Escritorio/Protecto1_2023/MIA_201903974_Proyecto1_S1_2023/Reports/MBRReport.cpp || cmake_object_order_depends_target_MIA_201903974_Proyecto1_S1_2023
+  DEP_FILE = CMakeFiles/MIA_201903974_Proyecto1_S1_2023.dir/Reports/MBRReport.cpp.o.d
+  FLAGS = -g -fdiagnostics-color=always -std=gnu++17
+  OBJECT_DIR = CMakeFiles/MIA_201903974_Proyecto1_S1_2023.dir
+  OBJECT_FILE_DIR = CMakeFiles/MIA_201903974_Proyecto1_S1_2023.dir/Reports
+
+build CMakeFiles/MIA_201903974_Proyecto1_S1_2023.dir/Partitions/Mount.cpp.o: CXX_COMPILER__MIA_201903974_Proyecto1_S1_2023_Debug /home/steven/Escritorio/Protecto1_2023/MIA_201903974_Proyecto1_S1_2023/Partitions/Mount.cpp || cmake_object_order_depends_target_MIA_201903974_Proyecto1_S1_2023
+  DEP_FILE = CMakeFiles/MIA_201903974_Proyecto1_S1_2023.dir/Partitions/Mount.cpp.o.d
+  FLAGS = -g -fdiagnostics-color=always -std=gnu++17
+  OBJECT_DIR = CMakeFiles/MIA_201903974_Proyecto1_S1_2023.dir
+  OBJECT_FILE_DIR = CMakeFiles/MIA_201903974_Proyecto1_S1_2023.dir/Partitions
+
 
 # =============================================================================
 # Link build statements for EXECUTABLE target MIA_201903974_Proyecto1_S1_2023
@@ -117,7 +147,7 @@ build CMakeFiles/MIA_201903974_Proyecto1_S1_2023.dir/Partitions/FDisk.cpp.o: CXX
 #############################################
 # Link the executable MIA_201903974_Proyecto1_S1_2023
 
-build MIA_201903974_Proyecto1_S1_2023: CXX_EXECUTABLE_LINKER__MIA_201903974_Proyecto1_S1_2023_Debug CMakeFiles/MIA_201903974_Proyecto1_S1_2023.dir/main.cpp.o CMakeFiles/MIA_201903974_Proyecto1_S1_2023.dir/Disks/MkDisk.cpp.o CMakeFiles/MIA_201903974_Proyecto1_S1_2023.dir/Disks/DiskFunctions.cpp.o CMakeFiles/MIA_201903974_Proyecto1_S1_2023.dir/Disks/RmDisk.cpp.o CMakeFiles/MIA_201903974_Proyecto1_S1_2023.dir/Utils/Functions.cpp.o CMakeFiles/MIA_201903974_Proyecto1_S1_2023.dir/Analyzer/driver.cpp.o CMakeFiles/MIA_201903974_Proyecto1_S1_2023.dir/Analyzer/parser.tab.cc.o CMakeFiles/MIA_201903974_Proyecto1_S1_2023.dir/Analyzer/scanner.cpp.o CMakeFiles/MIA_201903974_Proyecto1_S1_2023.dir/Utils/Variables.cpp.o CMakeFiles/MIA_201903974_Proyecto1_S1_2023.dir/Partitions/FDisk.cpp.o
+build MIA_201903974_Proyecto1_S1_2023: CXX_EXECUTABLE_LINKER__MIA_201903974_Proyecto1_S1_2023_Debug CMakeFiles/MIA_201903974_Proyecto1_S1_2023.dir/main.cpp.o CMakeFiles/MIA_201903974_Proyecto1_S1_2023.dir/Disks/MkDisk.cpp.o CMakeFiles/MIA_201903974_Proyecto1_S1_2023.dir/Disks/DiskFunctions.cpp.o CMakeFiles/MIA_201903974_Proyecto1_S1_2023.dir/Disks/RmDisk.cpp.o CMakeFiles/MIA_201903974_Proyecto1_S1_2023.dir/Utils/Functions.cpp.o CMakeFiles/MIA_201903974_Proyecto1_S1_2023.dir/Analyzer/driver.cpp.o CMakeFiles/MIA_201903974_Proyecto1_S1_2023.dir/Analyzer/parser.tab.cc.o CMakeFiles/MIA_201903974_Proyecto1_S1_2023.dir/Analyzer/scanner.cpp.o CMakeFiles/MIA_201903974_Proyecto1_S1_2023.dir/Utils/Variables.cpp.o CMakeFiles/MIA_201903974_Proyecto1_S1_2023.dir/Partitions/FDisk.cpp.o CMakeFiles/MIA_201903974_Proyecto1_S1_2023.dir/Reports/DiskReport.cpp.o CMakeFiles/MIA_201903974_Proyecto1_S1_2023.dir/Reports/ReportHandler.cpp.o CMakeFiles/MIA_201903974_Proyecto1_S1_2023.dir/Reports/ReportFunctions.cpp.o CMakeFiles/MIA_201903974_Proyecto1_S1_2023.dir/Reports/MBRReport.cpp.o CMakeFiles/MIA_201903974_Proyecto1_S1_2023.dir/Partitions/Mount.cpp.o
   FLAGS = -g
   LINK_LIBRARIES = -lstdc++fs
   OBJECT_DIR = CMakeFiles/MIA_201903974_Proyecto1_S1_2023.dir
@@ -131,7 +161,7 @@ build MIA_201903974_Proyecto1_S1_2023: CXX_EXECUTABLE_LINKER__MIA_201903974_Proy
 # Utility command for edit_cache
 
 build CMakeFiles/edit_cache.util: CUSTOM_COMMAND
-  COMMAND = cd /home/steven/Escritorio/Protecto1_2023/MIA_201903974_Proyecto1_S1_2023/cmake-build-debug && /snap/clion/222/bin/cmake/linux/x64/bin/cmake -E echo No\ interactive\ CMake\ dialog\ available.
+  COMMAND = cd /home/steven/Escritorio/Protecto1_2023/MIA_201903974_Proyecto1_S1_2023/cmake-build-debug && /snap/clion/228/bin/cmake/linux/x64/bin/cmake -E echo No\ interactive\ CMake\ dialog\ available.
   DESC = No interactive CMake dialog available...
   restat = 1
 
@@ -142,7 +172,7 @@ build edit_cache: phony CMakeFiles/edit_cache.util
 # Utility command for rebuild_cache
 
 build CMakeFiles/rebuild_cache.util: CUSTOM_COMMAND
-  COMMAND = cd /home/steven/Escritorio/Protecto1_2023/MIA_201903974_Proyecto1_S1_2023/cmake-build-debug && /snap/clion/222/bin/cmake/linux/x64/bin/cmake --regenerate-during-build -S/home/steven/Escritorio/Protecto1_2023/MIA_201903974_Proyecto1_S1_2023 -B/home/steven/Escritorio/Protecto1_2023/MIA_201903974_Proyecto1_S1_2023/cmake-build-debug
+  COMMAND = cd /home/steven/Escritorio/Protecto1_2023/MIA_201903974_Proyecto1_S1_2023/cmake-build-debug && /snap/clion/228/bin/cmake/linux/x64/bin/cmake --regenerate-during-build -S/home/steven/Escritorio/Protecto1_2023/MIA_201903974_Proyecto1_S1_2023 -B/home/steven/Escritorio/Protecto1_2023/MIA_201903974_Proyecto1_S1_2023/cmake-build-debug
   DESC = Running CMake to regenerate build system...
   pool = console
   restat = 1
@@ -169,14 +199,14 @@ build all: phony MIA_201903974_Proyecto1_S1_2023
 #############################################
 # Re-run CMake if any of its inputs changed.
 
-build build.ninja: RERUN_CMAKE | /home/steven/Escritorio/Protecto1_2023/MIA_201903974_Proyecto1_S1_2023/CMakeLists.txt /snap/clion/222/bin/cmake/linux/x64/share/cmake-3.24/Modules/CMakeCInformation.cmake /snap/clion/222/bin/cmake/linux/x64/share/cmake-3.24/Modules/CMakeCXXInformation.cmake /snap/clion/222/bin/cmake/linux/x64/share/cmake-3.24/Modules/CMakeCommonLanguageInclude.cmake /snap/clion/222/bin/cmake/linux/x64/share/cmake-3.24/Modules/CMakeGenericSystem.cmake /snap/clion/222/bin/cmake/linux/x64/share/cmake-3.24/Modules/CMakeInitializeConfigs.cmake /snap/clion/222/bin/cmake/linux/x64/share/cmake-3.24/Modules/CMakeLanguageInformation.cmake /snap/clion/222/bin/cmake/linux/x64/share/cmake-3.24/Modules/CMakeSystemSpecificInformation.cmake /snap/clion/222/bin/cmake/linux/x64/share/cmake-3.24/Modules/CMakeSystemSpecificInitialize.cmake /snap/clion/222/bin/cmake/linux/x64/share/cmake-3.24/Modules/Compiler/CMakeCommonCompilerMacros.cmake /snap/clion/222/bin/cmake/linux/x64/share/cmake-3.24/Modules/Compiler/GNU-C.cmake /snap/clion/222/bin/cmake/linux/x64/share/cmake-3.24/Modules/Compiler/GNU-CXX.cmake /snap/clion/222/bin/cmake/linux/x64/share/cmake-3.24/Modules/Compiler/GNU.cmake /snap/clion/222/bin/cmake/linux/x64/share/cmake-3.24/Modules/Platform/Linux-GNU-C.cmake /snap/clion/222/bin/cmake/linux/x64/share/cmake-3.24/Modules/Platform/Linux-GNU-CXX.cmake /snap/clion/222/bin/cmake/linux/x64/share/cmake-3.24/Modules/Platform/Linux-GNU.cmake /snap/clion/222/bin/cmake/linux/x64/share/cmake-3.24/Modules/Platform/Linux.cmake /snap/clion/222/bin/cmake/linux/x64/share/cmake-3.24/Modules/Platform/UnixPaths.cmake CMakeCache.txt CMakeFiles/3.24.2/CMakeCCompiler.cmake CMakeFiles/3.24.2/CMakeCXXCompiler.cmake CMakeFiles/3.24.2/CMakeSystem.cmake
+build build.ninja: RERUN_CMAKE | /home/steven/Escritorio/Protecto1_2023/MIA_201903974_Proyecto1_S1_2023/CMakeLists.txt /snap/clion/228/bin/cmake/linux/x64/share/cmake-3.24/Modules/CMakeCInformation.cmake /snap/clion/228/bin/cmake/linux/x64/share/cmake-3.24/Modules/CMakeCXXInformation.cmake /snap/clion/228/bin/cmake/linux/x64/share/cmake-3.24/Modules/CMakeCommonLanguageInclude.cmake /snap/clion/228/bin/cmake/linux/x64/share/cmake-3.24/Modules/CMakeGenericSystem.cmake /snap/clion/228/bin/cmake/linux/x64/share/cmake-3.24/Modules/CMakeInitializeConfigs.cmake /snap/clion/228/bin/cmake/linux/x64/share/cmake-3.24/Modules/CMakeLanguageInformation.cmake /snap/clion/228/bin/cmake/linux/x64/share/cmake-3.24/Modules/CMakeSystemSpecificInformation.cmake /snap/clion/228/bin/cmake/linux/x64/share/cmake-3.24/Modules/CMakeSystemSpecificInitialize.cmake /snap/clion/228/bin/cmake/linux/x64/share/cmake-3.24/Modules/Compiler/CMakeCommonCompilerMacros.cmake /snap/clion/228/bin/cmake/linux/x64/share/cmake-3.24/Modules/Compiler/GNU-C.cmake /snap/clion/228/bin/cmake/linux/x64/share/cmake-3.24/Modules/Compiler/GNU-CXX.cmake /snap/clion/228/bin/cmake/linux/x64/share/cmake-3.24/Modules/Compiler/GNU.cmake /snap/clion/228/bin/cmake/linux/x64/share/cmake-3.24/Modules/Platform/Linux-GNU-C.cmake /snap/clion/228/bin/cmake/linux/x64/share/cmake-3.24/Modules/Platform/Linux-GNU-CXX.cmake /snap/clion/228/bin/cmake/linux/x64/share/cmake-3.24/Modules/Platform/Linux-GNU.cmake /snap/clion/228/bin/cmake/linux/x64/share/cmake-3.24/Modules/Platform/Linux.cmake /snap/clion/228/bin/cmake/linux/x64/share/cmake-3.24/Modules/Platform/UnixPaths.cmake CMakeCache.txt CMakeFiles/3.24.2/CMakeCCompiler.cmake CMakeFiles/3.24.2/CMakeCXXCompiler.cmake CMakeFiles/3.24.2/CMakeSystem.cmake
   pool = console
 
 
 #############################################
 # A missing CMake input file is not an error.
 
-build /home/steven/Escritorio/Protecto1_2023/MIA_201903974_Proyecto1_S1_2023/CMakeLists.txt /snap/clion/222/bin/cmake/linux/x64/share/cmake-3.24/Modules/CMakeCInformation.cmake /snap/clion/222/bin/cmake/linux/x64/share/cmake-3.24/Modules/CMakeCXXInformation.cmake /snap/clion/222/bin/cmake/linux/x64/share/cmake-3.24/Modules/CMakeCommonLanguageInclude.cmake /snap/clion/222/bin/cmake/linux/x64/share/cmake-3.24/Modules/CMakeGenericSystem.cmake /snap/clion/222/bin/cmake/linux/x64/share/cmake-3.24/Modules/CMakeInitializeConfigs.cmake /snap/clion/222/bin/cmake/linux/x64/share/cmake-3.24/Modules/CMakeLanguageInformation.cmake /snap/clion/222/bin/cmake/linux/x64/share/cmake-3.24/Modules/CMakeSystemSpecificInformation.cmake /snap/clion/222/bin/cmake/linux/x64/share/cmake-3.24/Modules/CMakeSystemSpecificInitialize.cmake /snap/clion/222/bin/cmake/linux/x64/share/cmake-3.24/Modules/Compiler/CMakeCommonCompilerMacros.cmake /snap/clion/222/bin/cmake/linux/x64/share/cmake-3.24/Modules/Compiler/GNU-C.cmake /snap/clion/222/bin/cmake/linux/x64/share/cmake-3.24/Modules/Compiler/GNU-CXX.cmake /snap/clion/222/bin/cmake/linux/x64/share/cmake-3.24/Modules/Compiler/GNU.cmake /snap/clion/222/bin/cmake/linux/x64/share/cmake-3.24/Modules/Platform/Linux-GNU-C.cmake /snap/clion/222/bin/cmake/linux/x64/share/cmake-3.24/Modules/Platform/Linux-GNU-CXX.cmake /snap/clion/222/bin/cmake/linux/x64/share/cmake-3.24/Modules/Platform/Linux-GNU.cmake /snap/clion/222/bin/cmake/linux/x64/share/cmake-3.24/Modules/Platform/Linux.cmake /snap/clion/222/bin/cmake/linux/x64/share/cmake-3.24/Modules/Platform/UnixPaths.cmake CMakeCache.txt CMakeFiles/3.24.2/CMakeCCompiler.cmake CMakeFiles/3.24.2/CMakeCXXCompiler.cmake CMakeFiles/3.24.2/CMakeSystem.cmake: phony
+build /home/steven/Escritorio/Protecto1_2023/MIA_201903974_Proyecto1_S1_2023/CMakeLists.txt /snap/clion/228/bin/cmake/linux/x64/share/cmake-3.24/Modules/CMakeCInformation.cmake /snap/clion/228/bin/cmake/linux/x64/share/cmake-3.24/Modules/CMakeCXXInformation.cmake /snap/clion/228/bin/cmake/linux/x64/share/cmake-3.24/Modules/CMakeCommonLanguageInclude.cmake /snap/clion/228/bin/cmake/linux/x64/share/cmake-3.24/Modules/CMakeGenericSystem.cmake /snap/clion/228/bin/cmake/linux/x64/share/cmake-3.24/Modules/CMakeInitializeConfigs.cmake /snap/clion/228/bin/cmake/linux/x64/share/cmake-3.24/Modules/CMakeLanguageInformation.cmake /snap/clion/228/bin/cmake/linux/x64/share/cmake-3.24/Modules/CMakeSystemSpecificInformation.cmake /snap/clion/228/bin/cmake/linux/x64/share/cmake-3.24/Modules/CMakeSystemSpecificInitialize.cmake /snap/clion/228/bin/cmake/linux/x64/share/cmake-3.24/Modules/Compiler/CMakeCommonCompilerMacros.cmake /snap/clion/228/bin/cmake/linux/x64/share/cmake-3.24/Modules/Compiler/GNU-C.cmake /snap/clion/228/bin/cmake/linux/x64/share/cmake-3.24/Modules/Compiler/GNU-CXX.cmake /snap/clion/228/bin/cmake/linux/x64/share/cmake-3.24/Modules/Compiler/GNU.cmake /snap/clion/228/bin/cmake/linux/x64/share/cmake-3.24/Modules/Platform/Linux-GNU-C.cmake /snap/clion/228/bin/cmake/linux/x64/share/cmake-3.24/Modules/Platform/Linux-GNU-CXX.cmake /snap/clion/228/bin/cmake/linux/x64/share/cmake-3.24/Modules/Platform/Linux-GNU.cmake /snap/clion/228/bin/cmake/linux/x64/share/cmake-3.24/Modules/Platform/Linux.cmake /snap/clion/228/bin/cmake/linux/x64/share/cmake-3.24/Modules/Platform/UnixPaths.cmake CMakeCache.txt CMakeFiles/3.24.2/CMakeCCompiler.cmake CMakeFiles/3.24.2/CMakeCXXCompiler.cmake CMakeFiles/3.24.2/CMakeSystem.cmake: phony
 
 
 #############################################

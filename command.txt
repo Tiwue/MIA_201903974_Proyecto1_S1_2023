@@ -1,0 +1,1 @@
+rep >id=741Disco3 >path=/home/user/reports/reporte1.jpg >name=mbr
