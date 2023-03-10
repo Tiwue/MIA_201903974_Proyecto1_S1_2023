@@ -89,8 +89,8 @@ partition getPartition(MBR _mbr, std::string _name, FILE *_file) {
         return _mbr.mbr_partition_2;
     if (_mbr.mbr_partition_3.part_name == _name)
         return _mbr.mbr_partition_3;
-    if (_mbr.mbr_partition_3.part_name == _name)
-        return _mbr.mbr_partition_3;
+    if (_mbr.mbr_partition_4.part_name == _name)
+        return _mbr.mbr_partition_4;
 
     return {};
 }

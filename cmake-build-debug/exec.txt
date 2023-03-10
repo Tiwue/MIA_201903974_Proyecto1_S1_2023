@@ -1,1 +1,1 @@
-mkdisk >size=3000 >unit=K >path=/home/user/Disco2.dsk
+pause

@@ -49,14 +49,9 @@ std::string MBRReport::getDotMBR(MBR _mbr, std::string _path) {
     std::string mbr_fecha_creacion = ctime(&_mbr.mbr_fecha_creacion);
     std::string dot =
             std::string("\"MBR Report\" [ margin=\"0.5\" label = <\n") +
-            "<TABLE BGCOLOR=\"#48D1CC\" BORDER=\"2\" COLOR=\"BLACK\" CELLBORDER=\"1\" CELLSPACING=\"0\">\n" +
+            "<TABLE BGCOLOR=\"white\" BORDER=\"2\" COLOR=\"BLACK\" CELLBORDER=\"1\" CELLSPACING=\"0\">\n" +
             "<TR>\n" +
-            "<TD BGCOLOR=\"#d23939\" COLSPAN=\"2\">REPORTE DE MBR</TD>\n" +
-            "</TR>\n\n" +
-
-            "<TR>\n" +
-            "<TD WIDTH=\"140\" BGCOLOR=\"#ff6363\"><B>Nombre</B></TD>\n" +
-            "<TD BGCOLOR=\"#ff6363\"><B>Valor</B></TD>\n" +
+            "<TD BGCOLOR=\"orange\" COLSPAN=\"2\">REPORTE DE MBR</TD>\n" +
             "</TR>\n\n" +
 
             "<TR>\n" +
@@ -86,7 +81,18 @@ std::string MBRReport::getDotMBR(MBR _mbr, std::string _path) {
 
     partition _particion = _mbr.mbr_partition_1;
     if (_particion.part_status == '1') {
+
+        if(_particion.part_type == 'P'){
+            dot +=  std::string( "<TR>\n" ) +
+                    "<TD ALIGN=\"left\" BGCOLOR=\"lightslateblue\" colspan=\"2\">Particion Primaria</TD>\n" +
+                    "</TR>\n\n" ;
+        }else{
+            dot +=  std::string( "<TR>\n" ) +
+                    "<TD ALIGN=\"left\" BGCOLOR=\"mediumseagreen\" colspan=\"2\">Particion Extendida</TD>\n" +
+                    "</TR>\n\n" ;
+        }
         dot +=
+
                 std::string("<TR>\n") +
                 "<TD ALIGN=\"left\">part_status</TD>\n" +
                 "<TD>" + _particion.part_status + "</TD>\n" +
@@ -120,6 +126,15 @@ std::string MBRReport::getDotMBR(MBR _mbr, std::string _path) {
 
     _particion = _mbr.mbr_partition_2;
     if (_particion.part_status == '1') {
+        if(_particion.part_type == 'P'){
+            dot +=  std::string( "<TR>\n" ) +
+                    "<TD ALIGN=\"left\" BGCOLOR=\"lightslateblue\" colspan=\"2\">Particion Primaria</TD>\n" +
+                    "</TR>\n\n" ;
+        }else{
+            dot +=  std::string( "<TR>\n" ) +
+                    "<TD ALIGN=\"left\" BGCOLOR=\"mediumseagreen\"  colspan=\"2\">Particion Extendida</TD>\n" +
+                    "</TR>\n\n" ;
+        }
         dot +=
                 std::string("<TR>\n") +
                 "<TD ALIGN=\"left\">part_status</TD>\n" +
@@ -154,6 +169,15 @@ std::string MBRReport::getDotMBR(MBR _mbr, std::string _path) {
 
     _particion = _mbr.mbr_partition_3;
     if (_particion.part_status == '1') {
+        if(_particion.part_type == 'P'){
+            dot +=  std::string( "<TR>\n" ) +
+                    "<TD ALIGN=\"left\" BGCOLOR=\"lightslateblue\" colspan=\"2\">Particion Primaria</TD>\n" +
+                    "</TR>\n\n" ;
+        }else{
+            dot +=  std::string( "<TR>\n" ) +
+                    "<TD ALIGN=\"left\" BGCOLOR=\"mediumseagreen\"  colspan=\"2\">Particion Extendida</TD>\n" +
+                    "</TR>\n\n" ;
+        }
         dot +=
                 std::string("<TR>\n") +
                 "<TD ALIGN=\"left\">part_status</TD>\n" +
@@ -188,6 +212,15 @@ std::string MBRReport::getDotMBR(MBR _mbr, std::string _path) {
 
     _particion = _mbr.mbr_partition_4;
     if (_particion.part_status == '1') {
+        if(_particion.part_type == 'P'){
+            dot +=  std::string( "<TR>\n" ) +
+                    "<TD ALIGN=\"left\" BGCOLOR=\"lightslateblue\" colspan=\"2\">Particion Primaria</TD>\n" +
+                    "</TR>\n\n" ;
+        }else{
+            dot +=  std::string( "<TR>\n" ) +
+                    "<TD ALIGN=\"left\" BGCOLOR=\"mediumseagreen\" colspan=\"2\">Particion Extendida</TD>\n" +
+                    "</TR>\n\n" ;
+        }
         dot +=
                 std::string("<TR>\n") +
                 "<TD ALIGN=\"left\">part_status</TD>\n" +
@@ -230,14 +263,13 @@ std::string MBRReport::getDotEBR(EBR _ebr, int _index, std::string _node, std::s
     _dot += _node + " -> " + new_node + "\n";
     _dot +=
             std::string(new_node + " [ label = <\n") +
-            "<TABLE BGCOLOR=\"#48D1CC\" BORDER=\"2\" COLOR=\"BLACK\" CELLBORDER=\"1\" CELLSPACING=\"0\">\n" +
+            "<TABLE BGCOLOR=\"white\" BORDER=\"2\" COLOR=\"BLACK\" CELLBORDER=\"1\" CELLSPACING=\"0\">\n" +
             "<TR>\n" +
-            "<TD BGCOLOR=\"#d23939\" COLSPAN=\"2\">EBR_" + std::to_string(_index) + " REPORT</TD>\n" +
+            "<TD BGCOLOR=\"orange\" COLSPAN=\"2\">EBR_" + std::to_string(_index) + " REPORT</TD>\n" +
             "</TR>\n\n" +
 
             "<TR>\n" +
-            "<TD WIDTH=\"140\" BGCOLOR=\"#ff6363\"><B>Nombre</B></TD>\n" +
-            "<TD BGCOLOR=\"#ff6363\"><B>Valor</B></TD>\n" +
+            "<TD WIDTH=\"140\" BGCOLOR=\"firebrick1\" colspan=\"2\"><B>Partición Lógica</B></TD>\n" +
             "</TR>\n\n" +
 
             "<TR>\n" +

@@ -80,6 +80,7 @@ void FDisk::createPartitions() {
                     options[0] = mbr.mbr_partition_1.part_start - mbr.mbr_partition_1.part_start - _size;
                 else
                     options[0] = 0;
+
             }
         }
         nstart += mbr.mbr_partition_2.part_s;
@@ -89,6 +90,7 @@ void FDisk::createPartitions() {
                     options[1] = mbr.mbr_partition_2.part_start - mbr.mbr_partition_2.part_start - _size;
                 else
                     options[1] = 0;
+
             }
 
         }
@@ -99,6 +101,7 @@ void FDisk::createPartitions() {
                     options[2] = mbr.mbr_partition_3.part_start - mbr.mbr_partition_3.part_start - _size;
                 else
                     options[2] = 0;
+
             }
         }
 
@@ -109,6 +112,7 @@ void FDisk::createPartitions() {
                     options[3] = mbr.mbr_tamano - mbr.mbr_partition_4.part_start - _size;
                 else
                     options[3] = 0;
+
                 }
         }
 
@@ -134,9 +138,9 @@ void FDisk::createPartitions() {
             mbr.mbr_partition_3.part_fit = _fit;
             strcpy(mbr.mbr_partition_3.part_name, name.c_str());
             mbr.mbr_partition_3.part_s = tam;
-            mbr.mbr_partition_2.part_start = nstart;
-            mbr.mbr_partition_2.part_status = '1';
-            mbr.mbr_partition_2.part_type = _type;
+            mbr.mbr_partition_3.part_start = nstart;
+            mbr.mbr_partition_3.part_status = '1';
+            mbr.mbr_partition_3.part_type = _type;
         }else if(i==3){
             mbr.mbr_partition_4.part_fit = _fit;
             strcpy(mbr.mbr_partition_4.part_name, name.c_str());
@@ -248,6 +252,8 @@ void FDisk::createLogic(MBR _mbr, int sizeByte, FILE *_file) {
 
 
 void FDisk::erasePartition(char deleteChar) {
+
+
     char src[completedPath.size() + 1];
     strcpy(src, completedPath.c_str());
     MBR mbr;
@@ -256,99 +262,96 @@ void FDisk::erasePartition(char deleteChar) {
     fseek(pFile, 0, SEEK_SET);
     fread(&mbr, sizeof(MBR), 1, pFile);
 
-    char type = existPartition(mbr, name, pFile);
-    if (type == '0')
-        return coutError("No se encuentra ninguna partición con ese nombre asignado.", pFile);
+    if (deleteChar == 'C') {
+        char type = existPartition(mbr, name, pFile);
+        if (type == '0')
+            return coutError("No se encuentra ninguna partición con ese nombre asignado.", pFile);
 
-    if (type == 'P' || type == 'E') {
-        int i = getPartitionIndex(mbr, name, pFile);
+        if (type == 'P' || type == 'E') {
+            int i = getPartitionIndex(mbr, name, pFile);
 
-        if(i==0){
-            mbr.mbr_partition_1.part_fit = mbr.dsk_fit;
-            strcpy(mbr.mbr_partition_1.part_name, "");
-            // mbr.mbr_partition_1.part_size = 0;
-            mbr.mbr_partition_1.part_status = '0';
-            mbr.mbr_partition_1.part_type = 'P';
-            fseek(pFile, 0, SEEK_SET);
-            fwrite(&mbr, sizeof(MBR), 1, pFile);
-            if (deleteChar == 'C') {
-                fseek(pFile, mbr.mbr_partition_1.part_start + sizeof(partition), SEEK_SET);
-                // fwrite("\0", mbr.mbr_partition[i].part_size - sizeof(partition), 1, pFile);
-            }else{
-                return coutError("Párametro >delete no válido: " + this->varDelete, pFile);
+            if(i==0){
+                mbr.mbr_partition_1.part_fit = mbr.dsk_fit;
+                strcpy(mbr.mbr_partition_1.part_name, "               ");
+                // mbr.mbr_partition_1.part_size = 0;
+                mbr.mbr_partition_1.part_status = '0';
+                mbr.mbr_partition_1.part_type = 'P';
+                fseek(pFile, 0, SEEK_SET);
+                fwrite(&mbr, sizeof(MBR), 1, pFile);
+                std::cout << "\033[1;32mSe borró particion 1\033[0m\n";
+                if (deleteChar == 'C') {
+                    fseek(pFile, mbr.mbr_partition_1.part_start, SEEK_SET);
+                    fwrite("\0", 1, mbr.mbr_partition_1.part_s, pFile);
+                }
+            }else if(i==1){
+                mbr.mbr_partition_2.part_fit = mbr.dsk_fit;
+                strcpy(mbr.mbr_partition_2.part_name, "               ");
+                // mbr.mbr_partition[i].part_size = 0;
+                mbr.mbr_partition_2.part_status = '0';
+                mbr.mbr_partition_2.part_type = 'P';
+                fseek(pFile, 0, SEEK_SET);
+                fwrite(&mbr, sizeof(MBR), 1, pFile);
+                std::cout << "\033[1;32mSe borró particion 2\033[0m\n";
+                if (deleteChar == 'C') {
+                    fseek(pFile, mbr.mbr_partition_2.part_start, SEEK_SET);
+                    fwrite("\0", 1, mbr.mbr_partition_2.part_s, pFile);
+                }
+            }else if(i==2){
+                mbr.mbr_partition_3.part_fit = mbr.dsk_fit;
+                strcpy(mbr.mbr_partition_3.part_name, "               ");
+                // mbr.mbr_partition_3.part_size = 0;
+                mbr.mbr_partition_3.part_status = '0';
+                mbr.mbr_partition_3.part_type = 'P';
+                fseek(pFile, 0, SEEK_SET);
+                fwrite(&mbr, sizeof(MBR), 1, pFile);
+                std::cout << "\033[1;32mSe borró particion 3\033[0m\n";
+                if (deleteChar == 'C') {
+                    fseek(pFile, mbr.mbr_partition_3.part_start, SEEK_SET);
+                    fwrite("\0", 1, mbr.mbr_partition_3.part_s, pFile);
+                }
+            }else if(i==3){
+                mbr.mbr_partition_4.part_fit = mbr.dsk_fit;
+                strcpy(mbr.mbr_partition_4.part_name, "               ");
+                // mbr.mbr_partition_4.part_size = 0;
+                mbr.mbr_partition_4.part_status = '0';
+                mbr.mbr_partition_4.part_type = 'P';
+                fseek(pFile, 0, SEEK_SET);
+                fwrite(&mbr, sizeof(MBR), 1, pFile);
+                std::cout << "\033[1;32mSe borró particion 4\033[0m\n";
+                if (deleteChar == 'C') {
+                    fseek(pFile, mbr.mbr_partition_4.part_start, SEEK_SET);
+                    fwrite("\0", 1, mbr.mbr_partition_4.part_s, pFile);
+                }
             }
-        }else if(i==1){
-            mbr.mbr_partition_2.part_fit = mbr.dsk_fit;
-            strcpy(mbr.mbr_partition_2.part_name, "");
-            // mbr.mbr_partition[i].part_size = 0;
-            mbr.mbr_partition_2.part_status = '0';
-            mbr.mbr_partition_2.part_type = 'P';
-            fseek(pFile, 0, SEEK_SET);
-            fwrite(&mbr, sizeof(MBR), 1, pFile);
-            if (deleteChar == 'C') {
-                fseek(pFile, mbr.mbr_partition_2.part_start + sizeof(partition), SEEK_SET);
-                // fwrite("\0", mbr.mbr_partition[i].part_size - sizeof(partition), 1, pFile);
-            }else{
-                return coutError("Párametro >delete no válido: " + this->varDelete, pFile);
+        } else if (type == 'L') //borrar referencia del EBR anterior
+        {
+            int i= existeExtendida(mbr);
+            partition extendida = {};
+            if(i == 0){
+                extendida = mbr.mbr_partition_1;
+            }else if(i==1){
+                extendida = mbr.mbr_partition_2;
+            }else if(i==2){
+                extendida = mbr.mbr_partition_3;
+            }else if(i==3){
+                extendida = mbr.mbr_partition_4;
             }
-        }else if(i==2){
-            mbr.mbr_partition_3.part_fit = mbr.dsk_fit;
-            strcpy(mbr.mbr_partition_3.part_name, "");
-            // mbr.mbr_partition_3.part_size = 0;
-            mbr.mbr_partition_3.part_status = '0';
-            mbr.mbr_partition_3.part_type = 'P';
-            fseek(pFile, 0, SEEK_SET);
-            fwrite(&mbr, sizeof(MBR), 1, pFile);
-            if (deleteChar == 'C') {
-                fseek(pFile, mbr.mbr_partition_3.part_start + sizeof(partition), SEEK_SET);
-                // fwrite("\0", mbr.mbr_partition[i].part_size - sizeof(partition), 1, pFile);
-                }else{
-                return coutError("Párametro >delete no válido: " + this->varDelete, pFile);
-            }
-        }else if(i==3){
-            mbr.mbr_partition_4.part_fit = mbr.dsk_fit;
-            strcpy(mbr.mbr_partition_4.part_name, "");
-            // mbr.mbr_partition_4.part_size = 0;
-            mbr.mbr_partition_4.part_status = '0';
-            mbr.mbr_partition_4.part_type = 'P';
-            fseek(pFile, 0, SEEK_SET);
-            fwrite(&mbr, sizeof(MBR), 1, pFile);
-            if (deleteChar == 'C') {
-                fseek(pFile, mbr.mbr_partition_4.part_start + sizeof(partition), SEEK_SET);
-                // fwrite("\0", mbr.mbr_partition[i].part_size - sizeof(partition), 1, pFile);
-            }else{
-                return coutError("Párametro >delete no válido: " + this->varDelete, pFile);
-            }
-        }
-    } else if (type == 'L') //borrar referencia del EBR anterior
-    {
-        int i= existeExtendida(mbr);
-        partition extendida = {};
-        if(i == 0){
-            extendida = mbr.mbr_partition_1;
-        }else if(i==1){
-            extendida = mbr.mbr_partition_2;
-        }else if(i==2){
-            extendida = mbr.mbr_partition_3;
-        }else if(i==3){
-            extendida = mbr.mbr_partition_4;
-        }
 
-        EBR _ebr_to_delete, _ebr_initial, _ebr_previous;
-        fseek(pFile, extendida.part_start, SEEK_SET);
-        fread(&_ebr_initial, sizeof(EBR), 1, pFile);
-        _ebr_to_delete = getLogicPartition(_ebr_initial, name, pFile);
-        _ebr_previous = getEBRprevious(_ebr_initial, _ebr_to_delete.part_start, pFile);
-        _ebr_previous.part_next = _ebr_to_delete.part_next;
-        fseek(pFile, _ebr_to_delete.part_start, SEEK_SET);
-        fseek(pFile, _ebr_previous.part_start, SEEK_SET);
-        fwrite(&_ebr_previous, sizeof(EBR), 1, pFile);
-        if (deleteChar == 'C') {
-            fseek(pFile, _ebr_to_delete.part_start + sizeof(EBR), SEEK_SET);
-        }else{
-            return coutError("Párametro >delete no válido: " + this->varDelete, pFile);
+            EBR _ebr_to_delete, _ebr_initial, _ebr_previous;
+            fseek(pFile, extendida.part_start, SEEK_SET);
+            fread(&_ebr_initial, sizeof(EBR), 1, pFile);
+            _ebr_to_delete = getLogicPartition(_ebr_initial, name, pFile);
+            _ebr_previous = getEBRprevious(_ebr_initial, _ebr_to_delete.part_start, pFile);
+            _ebr_previous.part_next = _ebr_to_delete.part_next;
+            fseek(pFile, _ebr_to_delete.part_start, SEEK_SET);
+            fseek(pFile, _ebr_previous.part_start, SEEK_SET);
+            fwrite(&_ebr_previous, sizeof(EBR), 1, pFile);
         }
+    }else{
+        return coutError("Párametro >delete no válido: " + this->varDelete, pFile);
     }
+
+
     fclose(pFile);
     pFile = NULL;
     return;
@@ -370,26 +373,53 @@ void FDisk::manageSpace(){
 
     int size = getSize(_unit, std::stoi(add));
     if (type == 'P' || type == 'E') {
-        partition _particion = {};
+
         int i = getPartitionIndex(mbr, name, pFile);
         if(i==0){
-            _particion = mbr.mbr_partition_1;
+            if (!validations2(mbr, i, mbr.mbr_partition_1.part_start, mbr.mbr_partition_1.part_s ,size)) {
+                return coutError(
+                        "El parámetro '-add' debe dejar espacio positivo y no exceder los límites de la partición.", pFile);
+            }
+            mbr.mbr_partition_1.part_s = mbr.mbr_partition_1.part_s + size;
+            if(mbr.mbr_partition_2.part_status == '0'){
+                mbr.mbr_partition_2.part_start = mbr.mbr_partition_1.part_start +mbr.mbr_partition_1.part_s+1;
+                mbr.mbr_partition_2.part_s = mbr.mbr_partition_2.part_s + (-1*size);
+            }
+            fseek(pFile, 0, SEEK_SET);
+            fwrite(&mbr, sizeof(MBR), 1, pFile);
         }else if(i==1){
-            _particion = mbr.mbr_partition_2;
+            if (!validations2(mbr, i, mbr.mbr_partition_2.part_start, mbr.mbr_partition_2.part_s, size)) {
+                return coutError(
+                        "El parámetro '-add' debe dejar espacio positivo y no exceder los límites de la partición.", pFile);
+            }
+            mbr.mbr_partition_2.part_s = mbr.mbr_partition_2.part_s + size;
+            if(mbr.mbr_partition_3.part_status == '0'){
+                mbr.mbr_partition_3.part_start = mbr.mbr_partition_2.part_start +mbr.mbr_partition_2.part_s+1;
+                mbr.mbr_partition_3.part_s = mbr.mbr_partition_3.part_s + (-1*size);
+            }
+            fseek(pFile, 0, SEEK_SET);
+            fwrite(&mbr, sizeof(MBR), 1, pFile);
         }else if(i==2){
-            _particion = mbr.mbr_partition_3;
+            if (!validations2(mbr, i, mbr.mbr_partition_3.part_start, mbr.mbr_partition_3.part_s, size)) {
+                return coutError(
+                        "El parámetro '-add' debe dejar espacio positivo y no exceder los límites de la partición.", pFile);
+            }
+            mbr.mbr_partition_3.part_s = mbr.mbr_partition_3.part_s + size;
+            if(mbr.mbr_partition_4.part_status == '0' ){
+                mbr.mbr_partition_4.part_start = mbr.mbr_partition_3.part_start +mbr.mbr_partition_3.part_s+1;
+                mbr.mbr_partition_4.part_s = mbr.mbr_partition_4.part_s + (-1*size);
+            }
+            fseek(pFile, 0, SEEK_SET);
+            fwrite(&mbr, sizeof(MBR), 1, pFile);
         }else if(i==3){
-            _particion = mbr.mbr_partition_4;
+            if (!validations2(mbr, i, mbr.mbr_partition_4.part_start, mbr.mbr_partition_4.part_s, size)) {
+                return coutError(
+                        "El parámetro '-add' debe dejar espacio positivo y no exceder los límites de la partición.", pFile);
+            }
+            mbr.mbr_partition_4.part_s = mbr.mbr_partition_4.part_s + size;
+            fseek(pFile, 0, SEEK_SET);
+            fwrite(&mbr, sizeof(MBR), 1, pFile);
         }
-
-        if (!validations(mbr, i, _particion.part_start, size)) {
-            return coutError(
-                    "El parámetro '-add' debe dejar espacio positivo y no exceder los límites de la partición.", pFile);
-        }
-
-        _particion.part_s = _particion.part_s + size;
-        fseek(pFile, _particion.part_start, SEEK_SET);
-        fwrite(&_particion, sizeof(partition), 1, pFile);
         // fwrite("\0", _particion.part_size, 1, pFile);
     } else if (type == 'L') {
         int indice = existeExtendida(mbr);
@@ -408,12 +438,20 @@ void FDisk::manageSpace(){
         fseek(pFile, extendida.part_start, SEEK_SET);
         fread(&_ebr_initial, sizeof(EBR), 1, pFile);
         _ebr_to_update = getLogicPartition(_ebr_initial, name, pFile);
+        if(_ebr_to_update.part_next != -1){
+            if (_ebr_to_update.part_start + _ebr_to_update.part_s + size >= _ebr_to_update.part_next ||
+                _ebr_to_update.part_start + _ebr_to_update.part_s + size < _ebr_to_update.part_start)
+                return coutError(
+                        "El parámetro '-add' debe sobrar espacio positivo y no exceder los límites de la partición.",
+                        pFile);
+        }else{
+            if (_ebr_to_update.part_start + _ebr_to_update.part_s + size >= extendida.part_start+extendida.part_s ||
+                _ebr_to_update.part_start + _ebr_to_update.part_s + size < _ebr_to_update.part_start)
+                return coutError(
+                        "El parámetro '-add' debe sobrar espacio positivo y no exceder los límites de la partición.",
+                        pFile);
+        }
 
-        if (_ebr_to_update.part_start + _ebr_to_update.part_s+ size >= _ebr_to_update.part_next ||
-            _ebr_to_update.part_start + _ebr_to_update.part_s + size < _ebr_to_update.part_start)
-            return coutError(
-                    "El parámetro '-add' debe sobrar espacio positivo y no exceder los límites de la partición.",
-                    pFile);
 
         _ebr_to_update.part_s = _ebr_to_update.part_s + size;
         fseek(pFile, _ebr_to_update.part_start, SEEK_SET);
@@ -502,33 +540,60 @@ std::vector<EBR> FDisk::toRunLogicPartitions(EBR _ebr, FILE *_file, int sizeByte
 bool FDisk::validations(MBR _mbr, int _index, int _ini, int sizeByte) {
 
     if(_index == 0){
-        if (_ini + sizeByte < 0 || _ini + sizeByte > _mbr.mbr_tamano || _ini + sizeByte < _mbr.mbr_partition_1.part_start)
-            return false;
-        if (_index < 3 && _mbr.mbr_partition_1.part_start > 0) {
-            if (_ini + sizeByte >= _mbr.mbr_partition_1.part_start)
-                return false;
-        }
-    }else if(_index == 1){
-        if (_ini + sizeByte < 0 || _ini + sizeByte > _mbr.mbr_tamano || _ini + sizeByte < _mbr.mbr_partition_2.part_start)
+        if (_ini +  sizeByte < 0 || _ini + sizeByte > _mbr.mbr_tamano || _ini + sizeByte < _mbr.mbr_partition_1.part_start)
             return false;
         if (_index < 3 && _mbr.mbr_partition_2.part_start > 0) {
             if (_ini + sizeByte >= _mbr.mbr_partition_2.part_start)
                 return false;
         }
-    }else if(_index == 2){
-        if (_ini + sizeByte < 0 || _ini + sizeByte > _mbr.mbr_tamano || _ini + sizeByte < _mbr.mbr_partition_3.part_start)
+    }else if(_index == 1){
+        if (_ini + sizeByte < 0 || _ini + sizeByte > _mbr.mbr_tamano || _ini + sizeByte < _mbr.mbr_partition_2.part_start)
             return false;
         if (_index < 3 && _mbr.mbr_partition_3.part_start > 0) {
             if (_ini + sizeByte >= _mbr.mbr_partition_3.part_start)
                 return false;
         }
-    }else if(_index == 3){
-        if (_ini + sizeByte < 0 || _ini + sizeByte > _mbr.mbr_tamano || _ini + sizeByte < _mbr.mbr_partition_4.part_start)
+    }else if(_index == 2){
+        if (_ini + sizeByte < 0 || _ini + sizeByte > _mbr.mbr_tamano || _ini + sizeByte < _mbr.mbr_partition_3.part_start)
             return false;
         if (_index < 3 && _mbr.mbr_partition_4.part_start > 0) {
             if (_ini + sizeByte >= _mbr.mbr_partition_4.part_start)
                 return false;
         }
+    }else if(_index == 3){
+        if (_ini + sizeByte < 0 || _ini + sizeByte > _mbr.mbr_tamano || _ini + sizeByte < _mbr.mbr_partition_4.part_start)
+            return false;
+    }
+
+    return true;
+}
+
+bool FDisk::validations2(MBR _mbr, int _index, int _ini, int sizePart,  int sizeByte) {
+
+    if(_index == 0){
+        if (_ini + sizePart + sizeByte < 0 || _ini + sizePart +sizeByte > _mbr.mbr_tamano || _ini + sizePart + sizeByte < _mbr.mbr_partition_1.part_start)
+            return false;
+        if (_mbr.mbr_partition_2.part_status == '1' && _mbr.mbr_partition_2.part_start > 0) {
+            if (_ini + sizePart + sizeByte >= _mbr.mbr_partition_2.part_start)
+                return false;
+        }
+    }else if(_index == 1){
+        if (_ini + sizePart + sizeByte < 0 || _ini + sizePart + sizeByte > _mbr.mbr_tamano || _ini + sizePart + sizeByte < _mbr.mbr_partition_2.part_start)
+            return false;
+        if (_mbr.mbr_partition_3.part_status == '1'  && _mbr.mbr_partition_3.part_start > 0) {
+            if (_ini + sizePart + sizeByte >= _mbr.mbr_partition_3.part_start)
+                return false;
+        }
+    }else if(_index == 2){
+        if (_ini + sizePart + sizeByte < 0 || _ini + sizePart + sizeByte > _mbr.mbr_tamano || _ini +  sizePart + sizeByte < _mbr.mbr_partition_3.part_start)
+            return false;
+        if (_mbr.mbr_partition_4.part_status == '1'  && _mbr.mbr_partition_4.part_start > 0) {
+            if (_ini + sizePart + sizeByte >= _mbr.mbr_partition_4.part_start)
+                return false;
+        }
+    }else if(_index == 3){
+        if (_ini + sizePart + sizeByte < 0 || _ini + sizePart + sizeByte > _mbr.mbr_tamano || _ini +  sizePart + sizeByte < _mbr.mbr_partition_4.part_start)
+            return false;
     }
 
     return true;

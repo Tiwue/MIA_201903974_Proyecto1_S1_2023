@@ -38,6 +38,7 @@ public:
 
     bool validations(MBR _mbr, int _index, int _ini, int sizeByte);
 
+    bool validations2(MBR _mbr, int _index, int _ini, int sizePart, int sizeByte);
     void erasePartition(char deleteChar);
 
     void manageSpace();
