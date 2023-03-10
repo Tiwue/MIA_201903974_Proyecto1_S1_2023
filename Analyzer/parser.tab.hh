@@ -2021,9 +2021,9 @@ switch (yytype)
     enum
     {
       yyeof_ = 0,
-      yylast_ = 69,     ///< Last index in yytable_.
+      yylast_ = 70,     ///< Last index in yytable_.
       yynnts_ = 11,  ///< Number of nonterminal symbols.
-      yyfinal_ = 43, ///< Termination state number.
+      yyfinal_ = 45, ///< Termination state number.
       yyntokens_ = 60  ///< Number of tokens.
     };
 

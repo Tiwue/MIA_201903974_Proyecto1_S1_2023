@@ -6,6 +6,7 @@
 #include "../Disks/RmDisk.h"
 #include "../Partitions/FDisk.h"
 #include "../Partitions/Mount.h"
+#include "../Partitions/UnMount.h"
 
 
 #include "../Reports/ReportHandler.h"
@@ -25,6 +26,8 @@ int CommandHandler(struct command x) {
         ReportHandler *rpHandler = new ReportHandler(x.name, x.path, x.id, x.ruta);
     } else if (x.keyword == "__MOUNT") {
         Mount *mount = new Mount(x.path, x.name);
+    }else if (x.keyword == "__UMOUNT") {
+        UnMount *unMount = new UnMount(x.id);
     }
     return 1;
 }

@@ -1,1 +1,1 @@
-pause
+rep >id=747Disco1 >path=/home/user/reports/reporte2.jpg >name=disk

@@ -146,6 +146,7 @@ DISCOS: "_MKDISK" PARAMS {x = newCommand("__MKDISK",parameters);}
         | "_RMDISK" PARAMS {x = newCommand("__RMDISK",parameters);}
         | "_FDISK" PARAMS {x = newCommand("__FDISK",parameters);}
         | "_MOUNT" PARAMS {x = newCommand("__MOUNT",parameters);}
+        | "_UMOUNT" PARAMS {x = newCommand("__UMOUNT",parameters);}
 ;
 
 REPORT: "_rep" PARAMS {x = newCommand("__REP",parameters);}

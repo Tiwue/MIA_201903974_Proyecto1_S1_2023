@@ -49,7 +49,7 @@ PATH_DIR \/.[^" "]+|{IDENTIFICADOR}"."{IDENTIFICADOR}
 "rmdisk"		            {return yy::class_parser::make_RMDISK(yytext, loc);}
 "fdisk"		              {return yy::class_parser::make_FDISK(yytext, loc);}
 "mount"		              {return yy::class_parser::make_MOUNT(yytext, loc);}
-"umount"		            {return yy::class_parser::make_UMOUNT(yytext, loc);}
+"unmount"		            {return yy::class_parser::make_UMOUNT(yytext, loc);}
 "mkfs"		              {return yy::class_parser::make_MKFS(yytext, loc);}
 "exec"		              {return yy::class_parser::make_RUN_EXEC(yytext, loc);}
 "rep"                   {return yy::class_parser::make_RUN_REPORT(yytext, loc);}

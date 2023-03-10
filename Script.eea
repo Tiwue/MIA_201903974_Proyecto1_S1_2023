@@ -24,6 +24,9 @@ mount >path="/home/user/Disco1.dsk" >name=Particion1
 mount >path="/home/user/Disco1.dsk" >name=Particion2
 mount >path="/home/user/Disco1.dsk" >name=Particion3
 mount >path="/home/user/Disco1.dsk" >name=Particion4
+mount >path="/home/user/Disco1.dsk" >name=Logica1
+mount >path="/home/user/Disco1.dsk" >name=Logica2
+mount >path="/home/user/Disco1.dsk" >name=Logica3
 
 
 pause
@@ -46,6 +49,20 @@ fdisk >add=30 >size=10 >unit=K >path="/home/user/Disco1.dsk" >name="Logica1"
 fdisk >add=-30 >size=10 >unit=K >path="/home/user/Disco1.dsk" >name="Logica3"
 fdisk >add=30 >size=10 >unit=K >path="/home/user/Disco1.dsk" >name="Logica2"
 pause
-rep >id=741Disco1 >path=/home/user/reports/reporte1.jpg >name=mbr
-rep >id=741Disco1 >path=/home/user/reports/reporte2.jpg >name=disk
+rep >id=747Disco1 >path=/home/user/reports/reporte1.jpg >name=mbr
+rep >id=747Disco1 >path=/home/user/reports/reporte2.jpg >name=disk
 pause
+
+unmount >id=741Disco1
+unmount >id=742Disco1
+unmount >id=743Disco1
+unmount >id=744Disco1
+unmount >id=745Disco1
+unmount >id=746Disco1
+unmount >id=747Disco1
+
+unmount >id=741Disco1
+
+rep >id=747Disco1 >path=/home/user/reports/reporte1.jpg >name=mbr
+rep >id=747Disco1 >path=/home/user/reports/reporte2.jpg >name=disk
+
