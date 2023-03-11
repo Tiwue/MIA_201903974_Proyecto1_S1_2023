@@ -137,6 +137,8 @@ DATA: STRING {$$=$1;}
 E: EXEC
  | DISCOS
  | REPORT
+ | ADMIN_USERS_GROUPS
+
 ;
 
 EXEC: "_exec" PARAMS {x = newCommand("__EXEC",parameters);}
@@ -158,6 +160,9 @@ PARAMS: PARAMS PARAM "tk_EQUAL" DATA {parameters.push_back({$2, $4});}
       | PARAM "tk_EQUAL" DATA {parameters.clear(); parameters.push_back({$1, $3});}
       | BOOLEAN_PARAM {parameters.clear(); parameters.push_back({$1, "true"});}
 ;
+
+ADMIN_USERS_GROUPS: "_login" PARAMS {x = newCommand("__LOGIN",parameters);}
+                  | "_logout" {x = newCommand("__LOGOUT",parameters);}
 
 PARAM: "_SIZE" {$$ = "__SIZE";}
       | "_FIT" {$$ = "__FIT";}

@@ -197,6 +197,77 @@ int startByteSuperBloque(ParticionesMontadas _mounted) {
     return sb_start;
 }
 
+std::string ReadFile(int _index_inode, int _s_inode_start, int _s_block_start, std::string _path) {
+    FILE *file = fopen(_path.c_str(), "rb");
+    std::string content = "";
+    InodosTable inode_current;
+    fseek(file, _s_inode_start, SEEK_SET);
+    fseek(file, _index_inode * sizeof(InodosTable), SEEK_CUR);
+    fread(&inode_current, sizeof(InodosTable), 1, file);
+    for (int i = 0; i < 15; i++) //agregar indirectos
+    {
+        if (inode_current.i_block[i] != -1) {
+            ArchivosBlock src;
+            fseek(file, _s_block_start + inode_current.i_block[i] * 64, SEEK_SET);
+            fread(&src, 64, 1, file);
+            content += std::string(src.b_content);
+        }
+    }
+    fclose(file);
+    file = NULL;
+    return content;
+}
+
+Group getGroupByName(std::string _name, InodosTable users_inode, int s_block_start, std::string _path) {
+
+    std::string content_file = GetAllFile(users_inode, s_block_start, _path);
+    Group group_tmp;
+    /* LEER LÍNEA POR LÍNEA EL ARCHIVO USERS.TXT */
+    std::istringstream f(content_file);
+    std::string line;
+    while (getline(f, line)) {
+        int count = 0;
+        for (int i = 0; (i = line.find(',', i)) != std::string::npos; i++)
+            count++;
+        switch (count) {
+            case 2:
+                group_tmp.GID = std::stoi(line.substr(0, line.find_first_of(',')));
+                line = line.substr(line.find_first_of(',') + 1);
+
+                group_tmp.tipo = line.substr(0, line.find_first_of(','))[0];
+                line = line.substr(line.find_first_of(',') + 1);
+
+                group_tmp.nombre = line.substr(0, line.find_first_of('\n'));
+
+                if (group_tmp.nombre == _name && group_tmp.GID != 0) {
+                    return group_tmp;
+                }
+                break;
+            default:
+                break;
+        }
+    }
+    return group_tmp;
+}
+
+std::string GetAllFile(InodosTable _inode, int _s_block_start, std::string _path) {
+    FILE *_file = fopen(_path.c_str(), "rb");
+    std::string content = "";
+    for (int i = 0; i < 15; i++) //agregar indirectos
+    {
+        if (_inode.i_block[i] != -1) {
+            ArchivosBlock src;
+            fseek(_file, _s_block_start + _inode.i_block[i] * 64, SEEK_SET);
+            fread(&src, 64, 1, _file);
+            content += std::string(src.b_content);
+            // std::cout << _inode.i_block[i] << std::endl;
+        }
+    }
+    fclose(_file);
+    _file = NULL;
+    return content;
+}
+
 
 
 

@@ -8,6 +8,8 @@
 #include "../Partitions/Mount.h"
 #include "../Partitions/UnMount.h"
 #include "../FileSystem/Mkfs.h"
+#include "../FileSystem/Login.h"
+#include "../FileSystem/Logout.h"
 
 
 #include "../Reports/ReportHandler.h"
@@ -31,6 +33,10 @@ int CommandHandler(struct command x) {
         UnMount *unMount = new UnMount(x.id);
     }else if (x.keyword == "__MKFS") {
         Mkfs *mkfs = new Mkfs(x.id, x.type, x.fs);
+    }else if (x.keyword == "__LOGIN") {
+        Login *login = new Login(x.user, x.pwd, x.id);
+    } else if (x.keyword == "__LOGOUT") {
+        Logout *logout = new Logout();
     }
     return 1;
 }

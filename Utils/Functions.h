@@ -52,4 +52,10 @@ std::string getData(Group _group, User _user);
 
 int startByteSuperBloque(ParticionesMontadas _mounted);
 
+std::string ReadFile(int _index_inode, int _s_inode_start, int _s_block_start, std::string _path);
+
+Group getGroupByName(std::string _name, InodosTable users_inode, int s_block_start, std::string _path);
+
+std::string GetAllFile(InodosTable _inode, int _s_block_start, std::string _path);
+
 #endif
