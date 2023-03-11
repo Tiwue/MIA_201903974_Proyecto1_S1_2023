@@ -7,6 +7,7 @@
 #include "../Partitions/FDisk.h"
 #include "../Partitions/Mount.h"
 #include "../Partitions/UnMount.h"
+#include "../FileSystem/Mkfs.h"
 
 
 #include "../Reports/ReportHandler.h"
@@ -28,6 +29,8 @@ int CommandHandler(struct command x) {
         Mount *mount = new Mount(x.path, x.name);
     }else if (x.keyword == "__UMOUNT") {
         UnMount *unMount = new UnMount(x.id);
+    }else if (x.keyword == "__MKFS") {
+        Mkfs *mkfs = new Mkfs(x.id, x.type, x.fs);
     }
     return 1;
 }

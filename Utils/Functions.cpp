@@ -10,6 +10,7 @@
 #include "Structures.h"
 #include <experimental/filesystem>
 #include "Variables.h"
+#include "AdminStructure.h"
 
 
 namespace fs = std::experimental::filesystem;
@@ -141,6 +142,59 @@ time_t getCurrentTime() {
     auto curr_time = std::chrono::system_clock::now();
     std::time_t curr_time_t = std::chrono::system_clock::to_time_t(curr_time);
     return curr_time_t;
+}
+
+char charFormat(std::string _format) {
+    char nformat = 'N';
+    transform(_format.begin(), _format.end(), _format.begin(), ::tolower);
+    if (_format == "fast")
+        nformat = 'R'; //rápida
+    else if (_format == "full" || _format == "")
+        nformat = 'C'; //completa
+    else
+        std::cout << "Error: parámetro -type no válido: " + std::to_string(nformat) << std::endl;
+    return nformat;
+}
+
+int _2_or_3fs(std::string _fs) {
+    int nfs = 2;
+    transform(_fs.begin(), _fs.end(), _fs.begin(), ::tolower);
+    if (_fs == "3fs")
+        nfs = 3; //ext3
+    return nfs;
+}
+
+int number_inodos(int _part_size, int _ext) {
+    switch (_ext) {
+        case 2:
+            return (int) floor(((_part_size - sizeof(Superbloque)) / (1 + 3 + sizeof(InodosTable) + 3 * 64)));
+        case 3:
+            return (int) floor(((_part_size - sizeof(Superbloque)) / (1 + 3 + sizeof(Journaling) + sizeof(InodosTable) + 3 * 64)));
+        default:
+            return 0;
+    }
+}
+
+std::string getData(Group _group, User _user) {
+    std::string data =
+            std::to_string(_group.GID) + "," + _group.tipo + "," + _group.nombre + "\n" + std::to_string(_user.UID) +
+            "," + _user.tipo + "," + _user.grupo + "," + _user.nombre + "," + _user.contrasena + "\n";
+    return data;
+}
+
+int startByteSuperBloque(ParticionesMontadas _mounted) {
+    int sb_start=0;
+    switch (_mounted.type) {
+        case 'P':
+            sb_start = _mounted.particion.part_start;
+            break;
+        case 'L':
+            sb_start = _mounted.logica.part_start + sizeof(EBR);
+            break;
+        default:
+            break;
+    }
+    return sb_start;
 }
 
 

@@ -2,8 +2,8 @@
 // Created by erick on 9/09/22.
 //
 
-#ifndef MIA_PROYECTO1_201901758_2S2022_MBR_H
-#define MIA_PROYECTO1_201901758_2S2022_MBR_H
+#ifndef MIA_PROYECTO1_MBR_H
+#define MIA_PROYECTO1_MBR_H
 
 #include <string.h>
 
@@ -21,4 +21,4 @@ public:
 
 };
 
-#endif //MIA_PROYECTO1_201901758_2S2022_MBR_H
+#endif //MIA_PROYECTO1_MBR_H

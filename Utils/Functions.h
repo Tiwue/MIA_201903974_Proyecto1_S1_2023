@@ -8,6 +8,7 @@
 #include <fstream>
 #include <cstdlib>
 #include <experimental/filesystem>
+#include "AdminStructure.h"
 
 
 namespace fs = std::experimental::filesystem;
@@ -39,5 +40,16 @@ char charType(std::string _type, char _default);
 char charDelete(std::string _delete);
 
 time_t getCurrentTime();
+
+
+char charFormat(std::string _format);
+
+int _2_or_3fs(std::string _fs);
+
+int number_inodos(int _part_size, int _ext);
+
+std::string getData(Group _group, User _user);
+
+int startByteSuperBloque(ParticionesMontadas _mounted);
 
 #endif

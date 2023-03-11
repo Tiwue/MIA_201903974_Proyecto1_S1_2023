@@ -1,5 +1,5 @@
-#ifndef MIA_PROYECTO1_201901758_2S2022_FDISK_H
-#define MIA_PROYECTO1_201901758_2S2022_FDISK_H
+#ifndef MIA_PROYECTO1_FDISK_H
+#define MIA_PROYECTO1_FDISK_H
 
 
 #include <string>
@@ -50,4 +50,4 @@ public:
     EBR getLogicByFit(EBR _ebr_initial, char _fit, FILE *_file, int _size);
 };
 
-#endif //MIA_PROYECTO1_201901758_2S2022_FDISK_H
+#endif //MIA_PROYECTO1_FDISK_H

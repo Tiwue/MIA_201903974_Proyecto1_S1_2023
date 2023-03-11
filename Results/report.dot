@@ -1,32 +1,257 @@
 digraph G {
-graph[bgcolor="#141D26" margin=0]
+graph[margin=0]
 rankdir="TB";
 node [shape=plaintext fontname= "Ubuntu" fontsize="14"];
 edge [style="invis"];
 
-"Disk report" [ label = <<TABLE CELLBORDER="2" BGCOLOR="BLACK" BORDER="2" COLOR="BLACK"  CELLSPACING="0">
+"Inodes Report" [margin="0.5" label = <
+<TABLE BGCOLOR="white" BORDER="2" COLOR="BLACK" CELLBORDER="1" CELLSPACING="0">
+<TR>
+<TD HEIGHT="25" BGCOLOR="#B8860B" COLSPAN="2">REPORTE DE INODOS</TD>
+</TR>
 
-<TR><TD BGCOLOR="#1c2833" COLSPAN="100"><FONT POINT-SIZE="20" COLOR="#f2f3f4">Disk Report of: /home/user/Disco1.dsk</FONT></TD></TR><TR>
+<TR>
+<TD colspan="2" BGCOLOR="brown1" ALIGN="center">Inodo_0</TD>
+</TR>
 
-<TD HEIGHT="150" WIDTH="75" BGCOLOR="#c0392b">MBR</TD>
+<TR>
+<TD HEIGHT="30" >i_uid</TD>
+<TD WIDTH="100" >1</TD>
+</TR>
 
-<TD HEIGHT="160" WIDTH="150" BGCOLOR="#229954">PARTICIÓN 1<br/><br/>Libre<br/><br/><b>5%</b><br/></TD>
+<TR>
+<TD HEIGHT="30" >I_gid</TD>
+<TD WIDTH="100" >1</TD>
+</TR>
 
-<TD HEIGHT="160" WIDTH="150" BGCOLOR="#2471a3">PARTICIÓN 2<br/><br/>Extendida<br/><br/><b>50%</b><br/></TD>
+<TR>
+<TD HEIGHT="30" >i_s</TD>
+<TD WIDTH="100" >27</TD>
+</TR>
 
-<TD HEIGHT="160" WIDTH="40" BGCOLOR="#2471a3">EBR</TD><TD HEIGHT="160" WIDTH="80" BGCOLOR="#2471a3"><br/>Lógica<br/><br/><b>4%</b><br/></TD>
+<TR>
+<TD HEIGHT="30" >i_atime</TD>
+<TD WIDTH="100" >Tue Mar 14 01:26:51 2023
+</TD>
+</TR>
 
-<TD HEIGHT="160" WIDTH="80" BGCOLOR="#2471a3"><br/>Libre<br/><br/><b>6%</b><br/></TD>
+<TR>
+<TD HEIGHT="30" >i_ctime</TD>
+<TD WIDTH="100" >Tue Mar 14 01:26:51 2023
+</TD>
+</TR>
 
-<TD HEIGHT="160" WIDTH="40" BGCOLOR="#2471a3">EBR</TD><TD HEIGHT="160" WIDTH="80" BGCOLOR="#2471a3"><br/>Lógica<br/><br/><b>8%</b><br/></TD>
+<TR>
+<TD HEIGHT="30" >i_mtime</TD>
+<TD WIDTH="100" >Tue Mar 14 01:26:51 2023
+</TD>
+</TR>
 
-<TD HEIGHT="160" WIDTH="150" BGCOLOR="#5d6d7e">PARTICIÓN 3<br/><br/>Primaria<br/><br/><b>5%</b><br/></TD>
+<TR>
+<TD>i_block_0</TD>
+<TD>0</TD>
+</TR>
 
-<TD HEIGHT="160" WIDTH="150" BGCOLOR="#8e44ad">PARTICIÓN 4<br/><br/>Primaria<br/><br/><b>1%</b><br/></TD>
+<TR>
+<TD>i_block_1</TD>
+<TD>-1</TD>
+</TR>
 
-<TD HEIGHT="160" WIDTH="100" BGCOLOR="#b7950b">LIBRE<br/><br/><b>39%</b><br/></TD>
+<TR>
+<TD>i_block_2</TD>
+<TD>-1</TD>
+</TR>
 
+<TR>
+<TD>i_block_3</TD>
+<TD>-1</TD>
+</TR>
 
+<TR>
+<TD>i_block_4</TD>
+<TD>-1</TD>
+</TR>
+
+<TR>
+<TD>i_block_5</TD>
+<TD>-1</TD>
+</TR>
+
+<TR>
+<TD>i_block_6</TD>
+<TD>-1</TD>
+</TR>
+
+<TR>
+<TD>i_block_7</TD>
+<TD>-1</TD>
+</TR>
+
+<TR>
+<TD>i_block_8</TD>
+<TD>-1</TD>
+</TR>
+
+<TR>
+<TD>i_block_9</TD>
+<TD>-1</TD>
+</TR>
+
+<TR>
+<TD>i_block_10</TD>
+<TD>-1</TD>
+</TR>
+
+<TR>
+<TD>i_block_11</TD>
+<TD>-1</TD>
+</TR>
+
+<TR>
+<TD>i_block_12</TD>
+<TD>-1</TD>
+</TR>
+
+<TR>
+<TD>i_block_13</TD>
+<TD>-1</TD>
+</TR>
+
+<TR>
+<TD>i_block_14</TD>
+<TD>-1</TD>
+</TR>
+
+<TR>
+<TD>i_type</TD>
+<TD>0</TD>
+</TR>
+
+<TR>
+<TD>i_perm</TD>
+<TD>777</TD>
+</TR>
+
+<TR>
+<TD colspan="2" BGCOLOR="brown1" ALIGN="center">Inodo_1</TD>
+</TR>
+
+<TR>
+<TD HEIGHT="30" >i_uid</TD>
+<TD WIDTH="100" >1</TD>
+</TR>
+
+<TR>
+<TD HEIGHT="30" >I_gid</TD>
+<TD WIDTH="100" >1</TD>
+</TR>
+
+<TR>
+<TD HEIGHT="30" >i_s</TD>
+<TD WIDTH="100" >27</TD>
+</TR>
+
+<TR>
+<TD HEIGHT="30" >i_atime</TD>
+<TD WIDTH="100" >Tue Mar 14 01:26:51 2023
+</TD>
+</TR>
+
+<TR>
+<TD HEIGHT="30" >i_ctime</TD>
+<TD WIDTH="100" >Tue Mar 14 01:26:51 2023
+</TD>
+</TR>
+
+<TR>
+<TD HEIGHT="30" >i_mtime</TD>
+<TD WIDTH="100" >Tue Mar 14 01:26:51 2023
+</TD>
+</TR>
+
+<TR>
+<TD>i_block_0</TD>
+<TD>1</TD>
+</TR>
+
+<TR>
+<TD>i_block_1</TD>
+<TD>-1</TD>
+</TR>
+
+<TR>
+<TD>i_block_2</TD>
+<TD>-1</TD>
+</TR>
+
+<TR>
+<TD>i_block_3</TD>
+<TD>-1</TD>
+</TR>
+
+<TR>
+<TD>i_block_4</TD>
+<TD>-1</TD>
+</TR>
+
+<TR>
+<TD>i_block_5</TD>
+<TD>-1</TD>
+</TR>
+
+<TR>
+<TD>i_block_6</TD>
+<TD>-1</TD>
+</TR>
+
+<TR>
+<TD>i_block_7</TD>
+<TD>-1</TD>
+</TR>
+
+<TR>
+<TD>i_block_8</TD>
+<TD>-1</TD>
+</TR>
+
+<TR>
+<TD>i_block_9</TD>
+<TD>-1</TD>
+</TR>
+
+<TR>
+<TD>i_block_10</TD>
+<TD>-1</TD>
+</TR>
+
+<TR>
+<TD>i_block_11</TD>
+<TD>-1</TD>
+</TR>
+
+<TR>
+<TD>i_block_12</TD>
+<TD>-1</TD>
+</TR>
+
+<TR>
+<TD>i_block_13</TD>
+<TD>-1</TD>
+</TR>
+
+<TR>
+<TD>i_block_14</TD>
+<TD>-1</TD>
+</TR>
+
+<TR>
+<TD>i_type</TD>
+<TD>1</TD>
+</TR>
+
+<TR>
+<TD>i_perm</TD>
+<TD>700</TD>
 </TR>
 
 </TABLE>>];

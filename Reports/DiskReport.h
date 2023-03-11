@@ -1,7 +1,7 @@
 
 
-#ifndef MIA_PROYECTO1_201901758_2S2022_DISK_H
-#define MIA_PROYECTO1_201901758_2S2022_DISK_H
+#ifndef MIA_PROYECTO1_DISK_H
+#define MIA_PROYECTO1_DISK_H
 
 #include <string>
 #include "../Utils/Structures.h"
@@ -31,4 +31,4 @@ public:
     };
 
 
-#endif //MIA_PROYECTO1_201901758_2S2022_DISK_H
+#endif //MIA_PROYECTO1_sDISK_H

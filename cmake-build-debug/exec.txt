@@ -1,1 +1,1 @@
-pause
+rep >id=745Disco1 >path=/home/user/reports/inodos1.jpg >name=inode

@@ -7,6 +7,7 @@
 #include "MBRReport.h"
 #include "DiskReport.h"
 #include "../Utils/Variables.h"
+#include "Inode.h"
 
 
 
@@ -42,6 +43,19 @@ void ReportHandler::executeReportHandler() {
         DiskReport *disk = new DiskReport(mounted);
         grafo = disk->getReport();
     }else{
+        Superbloque sb;
+        FILE *file = fopen(mounted.path.c_str(), "rb");
+        int part_start = startByteSuperBloque(mounted);
+        fseek(file, part_start, SEEK_SET);
+        fread(&sb, sizeof(Superbloque), 1, file);
+        if (sb.s_magic == -1)
+            return coutError("El sistema de archivos se ha corrompido, intente recuperarlo usando Recovery.", file);
+
+        if (_name == "inode") {
+            Inode *inode = new Inode(mounted);
+            grafo = inode->getReport();
+        }
+        else
             return coutError("El nombre del reporte a generar no es válido: " + _name, NULL);
     }
     if (grafo == "-")

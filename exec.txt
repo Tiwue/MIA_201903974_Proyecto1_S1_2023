@@ -1,1 +1,1 @@
-rep >id=747Disco1 >path=/home/user/reports/reporte2.jpg >name=disk
+rep >id=744Disco1 >path=/home/user/reports/inodos2.jpg >name=inode

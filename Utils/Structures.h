@@ -72,4 +72,48 @@ struct Superbloque {
     int s_inode_start;       // Guardará el inicio de la tabla de inodos
     int s_block_start;       // Guardará el inicio de la tabla de bloques
 };
+
+struct InodosTable {
+    int i_uid;      // UID del usuario propietario del archivo o carpeta
+    int i_gid;      // GID del grupo al que pertenece el archivo o carpeta
+    int i_s;     // Tamaño del archivo en bytes
+    time_t i_atime; // Última fecha en que se leyó el inodo sin modificarlo
+    time_t i_ctime; // Fecha en la que se creó el inodo
+    time_t i_mtime; // Úlitma fecha en la que se modificó el inodo
+    /* Array en los que los primeros 12 registros son bloques directos.
+    El 13 será el número del bloque simple indirecto.
+    El 14 será el número del bloque doble indirecto.
+    El 15 será el número del bloque triple indirecto.
+    Si no son utilizados tendrá el valor -1 */
+    int i_block[15] = {1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1}; // Hace referencia al bloque apunta
+    char i_type;                                                                   // Indica si es archivo o carpeta. 1=archivo, 0=carpeta
+    int i_perm;                                                                    // Guardará los permisos del archivo o carpeta a nivel de bits
+};
+
+struct Journaling {
+    char command[100] = "-";
+};
+
+
+struct Content {
+    char b_name[12] = ""; // Nombre de la carpeta o archivo
+    int b_inodo = -1;     // Apuntador hacia un inodo asociado al archivo o carpeta
+};
+
+
+struct CarpetasBlock {
+    Content b_content[4]; // Array con el contenido de la carpeta
+};
+
+
+struct ArchivosBlock {
+    char b_content[64] = ""; // Array con el contenido del archivo
+};
+
+
+struct ApuntadoresBlock {
+    int b_pointers[16] = {-1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1};
+};
+
+
 #endif
