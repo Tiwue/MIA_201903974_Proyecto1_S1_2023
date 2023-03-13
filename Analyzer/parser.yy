@@ -150,6 +150,10 @@ DISCOS: "_MKDISK" PARAMS {x = newCommand("__MKDISK",parameters);}
         | "_MOUNT" PARAMS {x = newCommand("__MOUNT",parameters);}
         | "_UMOUNT" PARAMS {x = newCommand("__UMOUNT",parameters);}
         | "_MKFS" PARAMS {x = newCommand("__MKFS",parameters);}
+        | "_MKGRP" PARAMS {x = newCommand("__MKGRP",parameters);}
+        | "_RMGRP" PARAMS {x = newCommand("__RMGRP",parameters);}
+        | "_MKUSR" PARAMS {x = newCommand("__MKUSR",parameters);}
+        | "_RMUSR" PARAMS {x = newCommand("__RMUSR",parameters);}
 ;
 
 REPORT: "_rep" PARAMS {x = newCommand("__REP",parameters);}

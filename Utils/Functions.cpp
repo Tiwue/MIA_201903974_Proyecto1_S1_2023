@@ -268,6 +268,105 @@ std::string GetAllFile(InodosTable _inode, int _s_block_start, std::string _path
     return content;
 }
 
+int ByteLastFileBlock(InodosTable _inode) {
+    for (int i = 0; i < 15; i++) //falta indirecto
+    {
+        if (_inode.i_block[i] == -1)
+            return _inode.i_block[i - 1] * 64;
+    }
+    return -1;
+}
+
+void writeBlocks(std::string _content, int _number_inode) {
+    std::vector<std::string> chars = Separate64Chars(_content);
+    for (int i = 0; i < chars.size(); i++) // Por cada iteración crear un bloque de contenido
+    {
+        int block_written = writeBlock(0, chars[i], -1);
+        UpdateInode(_number_inode, block_written);
+    }
+}
+
+std::vector<std::string> Separate64Chars(std::string _content) {
+    std::vector<std::string> vector_s;
+    while (_content.length() >= 64) {
+        std::string tmp = _content.substr(0, 64);
+        vector_s.push_back(tmp);
+        _content = _content.substr(64);
+    }
+    if (_content.length() > 0)
+        vector_s.push_back(_content);
+    return vector_s;
+}
+
+void UpdateInode(int _inode_index, int _block_written) {
+    FILE *file = fopen((_user_logged.mounted.path).c_str(), "rb+");
+    InodosTable _inode;
+    /* Lectura del superbloque */
+    Superbloque super_bloque;
+    fseek(file, startByteSuperBloque(_user_logged.mounted), SEEK_SET);
+    fread(&super_bloque, sizeof(Superbloque), 1, file);
+    /* Lectura del inodo */
+    fseek(file, super_bloque.s_inode_start, SEEK_SET);
+    fseek(file, _inode_index * sizeof(InodosTable), SEEK_CUR);
+    fread(&_inode, sizeof(InodosTable), 1, file);
+
+    bool updated = false;
+    for (int i = 0; i < 15 && !updated; i++) // falta indirectos
+    {
+        if (_inode.i_block[i] == -1) {
+            _inode.i_block[i] = _block_written;
+            _inode.i_mtime = getCurrentTime();
+            updated = true;
+            break;
+        }
+    }
+    if (!updated)
+        coutError("Error: no se encontró ningún bloque de inodo libre para guardar el contenido.", NULL);
+    /* Sobreescribir el inodo */
+    fseek(file, super_bloque.s_inode_start, SEEK_SET);
+    fseek(file, _inode_index * sizeof(InodosTable), SEEK_CUR);
+    fwrite(&_inode, sizeof(InodosTable), 1, file);
+    fclose(file);
+    file = NULL;
+}
+
+int writeBlock(int _type, std::string _content, int _block_reference) {
+    FILE *file = fopen((_user_logged.mounted.path).c_str(), "rb+");
+    int start_byte_sb = startByteSuperBloque(_user_logged.mounted);
+    /* Lectura del superbloque */
+    Superbloque super_bloque;
+    fseek(file, start_byte_sb, SEEK_SET);
+    fread(&super_bloque, sizeof(Superbloque), 1, file);
+    /* Lectura del bitmap de bloques */
+    char bm_block[3 * super_bloque.s_inodes_count];
+    fseek(file, super_bloque.s_bm_block_start, SEEK_SET);
+    fread(&bm_block, 3 * super_bloque.s_inodes_count, 1, file);
+    /* Posicionarse en el espacio del bloque disponible */
+    int block_free = super_bloque.s_first_blo;
+    fseek(file, super_bloque.s_block_start, SEEK_SET);
+    fseek(file, block_free * 64, SEEK_CUR);
+    ArchivosBlock archivo;
+    ApuntadoresBlock apuntadores;
+    switch (_type) {
+        case 0:
+            strcpy(archivo.b_content, _content.c_str());
+            fwrite(&archivo, 64, 1, file);
+            break;
+    }
+    bm_block[block_free] = '1';
+    super_bloque.s_first_blo = block_free + 1;
+    super_bloque.s_free_blocks_count--;
+    fseek(file, start_byte_sb, SEEK_SET);
+    fwrite(&super_bloque, sizeof(Superbloque), 1, file);
+
+    fseek(file, super_bloque.s_bm_block_start, SEEK_SET);
+    fwrite(&bm_block, 3 * super_bloque.s_inodes_count, 1, file);
+
+    fclose(file);
+    file = NULL;
+    return block_free; // Retornamos el número de bloque creado
+}
+
 
 
 

@@ -48,6 +48,14 @@ login >user="mi usuario" >pass="mi pwd" >id=744Disco1
 
 pause
 
-Logout
+mkgrp >name=usuarios
+mkusr >user=user1 >pass=usuario >grp=usuarios
 
+mkgrp >name=usuarios
+rmgrp >name=usuarios
+rmgrp >name=usuarios
+
+mkusr >user=user1 >pass=usuario >grp=usuarios2
+rmusr >user=user1
+rmusr >user=user1
 

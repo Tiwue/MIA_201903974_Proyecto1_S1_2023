@@ -58,4 +58,13 @@ Group getGroupByName(std::string _name, InodosTable users_inode, int s_block_sta
 
 std::string GetAllFile(InodosTable _inode, int _s_block_start, std::string _path);
 
+int ByteLastFileBlock(InodosTable _inode);
+
+void writeBlocks(std::string _content, int _number_inode);
+
+int writeBlock(int _type, std::string _content, int _block_reference);
+
+void UpdateInode(int _inode_index, int _block_written);
+
+std::vector<std::string> Separate64Chars(std::string _content);
 #endif

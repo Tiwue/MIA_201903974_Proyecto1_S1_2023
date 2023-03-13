@@ -10,6 +10,10 @@
 #include "../FileSystem/Mkfs.h"
 #include "../FileSystem/Login.h"
 #include "../FileSystem/Logout.h"
+#include "../FileSystem/MkGrp.h"
+#include "../FileSystem/RmGrp.h"
+#include "../FileSystem/MkUsr.h"
+#include "../FileSystem/RmUsr.h"
 
 
 #include "../Reports/ReportHandler.h"
@@ -37,6 +41,14 @@ int CommandHandler(struct command x) {
         Login *login = new Login(x.user, x.pwd, x.id);
     } else if (x.keyword == "__LOGOUT") {
         Logout *logout = new Logout();
+    } else if (x.keyword == "__MKGRP") {
+        MkGrp *mkGrp = new MkGrp(x.name);
+    } else if (x.keyword == "__RMGRP") {
+        RmGrp *rmGrp = new RmGrp(x.name);
+    } else if (x.keyword == "__MKUSR") {
+        MkUsr *mkUsr = new MkUsr(x.user, x.pwd, x.grp);
+    } else if (x.keyword == "__RMUSR") {
+        RmUsr *rmUsr = new RmUsr(x.user);
     }
     return 1;
 }
