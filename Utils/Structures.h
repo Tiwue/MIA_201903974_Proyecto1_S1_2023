@@ -115,5 +115,8 @@ struct ApuntadoresBlock {
     int b_pointers[16] = {-1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1};
 };
 
-
+struct FolderReference {
+    int inode = 0;
+    int block = 0;
+};
 #endif

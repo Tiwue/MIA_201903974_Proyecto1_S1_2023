@@ -14,6 +14,8 @@
 #include "../FileSystem/RmGrp.h"
 #include "../FileSystem/MkUsr.h"
 #include "../FileSystem/RmUsr.h"
+#include "../FileSystemAdmin/MkFile.h"
+#include "../FileSystemAdmin/MkDir.h"
 
 
 #include "../Reports/ReportHandler.h"
@@ -49,6 +51,17 @@ int CommandHandler(struct command x) {
         MkUsr *mkUsr = new MkUsr(x.user, x.pwd, x.grp);
     } else if (x.keyword == "__RMUSR") {
         RmUsr *rmUsr = new RmUsr(x.user);
+    } else if (x.keyword == "__MKFILE") {
+        MkFile *mkFile = new MkFile(x.path, x.r, x.size, x.cont, x._stdin, false);
+        int pre_t = mkFile->status;
+        if (pre_t == 777) {
+            MkDir *mkDir = new MkDir();
+            if (!(mkDir->recursiveMkDir((x.path).substr(0, x.path.find_last_of('/')), "true"))) {
+                return 0;
+            }
+            MkFile *reMkFile = new MkFile(x.path, x.r, x.size, x.cont, x._stdin, false);
+        }
+        return pre_t;
     }
     return 1;
 }

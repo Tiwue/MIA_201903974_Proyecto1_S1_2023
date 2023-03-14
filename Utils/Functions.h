@@ -67,4 +67,16 @@ int writeBlock(int _type, std::string _content, int _block_reference);
 void UpdateInode(int _inode_index, int _block_written);
 
 std::vector<std::string> Separate64Chars(std::string _content);
+
+std::vector<std::string> SplitPath(std::string _path);
+
+FolderReference getFatherReference(FolderReference _fr, std::string _folder, FILE *_file, int _start_inodes, int _start_blocks);
+
+bool HasPermission(User _user, InodosTable _inode, int _req);
+
+bool fileExists(InodosTable _inode, std::string _filename, FILE *_file, int _start_blocks);
+
+void editarArchivo(std::string _path, std::string _name, std::string _content);
+
+
 #endif

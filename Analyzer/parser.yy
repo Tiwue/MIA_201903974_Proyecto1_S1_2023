@@ -138,6 +138,7 @@ E: EXEC
  | DISCOS
  | REPORT
  | ADMIN_USERS_GROUPS
+ | FILESYSTEM
 
 ;
 
@@ -154,6 +155,11 @@ DISCOS: "_MKDISK" PARAMS {x = newCommand("__MKDISK",parameters);}
         | "_RMGRP" PARAMS {x = newCommand("__RMGRP",parameters);}
         | "_MKUSR" PARAMS {x = newCommand("__MKUSR",parameters);}
         | "_RMUSR" PARAMS {x = newCommand("__RMUSR",parameters);}
+;
+
+FILESYSTEM: "_MKFILE" PARAMS {x = newCommand("__MKFILE",parameters);}
+            | "_MKDIR" PARAMS {x = newCommand("__MKDIR",parameters);}
+
 ;
 
 REPORT: "_rep" PARAMS {x = newCommand("__REP",parameters);}

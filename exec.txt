@@ -1,1 +1,1 @@
-rmusr >user=user1
+rep >id=744Disco1 >path=/home/user/reports/inodos2.jpg >name=inode

@@ -705,8 +705,8 @@ switch (yytype)
       case 59: // "tk_number"
       case 62: // STRING
       case 63: // DATA
-      case 70: // PARAM
-      case 71: // BOOLEAN_PARAM
+      case 71: // PARAM
+      case 72: // BOOLEAN_PARAM
         value.template destroy< std::string > ();
         break;
 
@@ -2021,9 +2021,9 @@ switch (yytype)
     enum
     {
       yyeof_ = 0,
-      yylast_ = 91,     ///< Last index in yytable_.
-      yynnts_ = 12,  ///< Number of nonterminal symbols.
-      yyfinal_ = 59, ///< Termination state number.
+      yylast_ = 101,     ///< Last index in yytable_.
+      yynnts_ = 13,  ///< Number of nonterminal symbols.
+      yyfinal_ = 64, ///< Termination state number.
       yyntokens_ = 60  ///< Number of tokens.
     };
 
@@ -2154,8 +2154,8 @@ switch (yytype)
       case 59: // "tk_number"
       case 62: // STRING
       case 63: // DATA
-      case 70: // PARAM
-      case 71: // BOOLEAN_PARAM
+      case 71: // PARAM
+      case 72: // BOOLEAN_PARAM
         value.move< std::string > (std::move (that.value));
         break;
 
@@ -2233,8 +2233,8 @@ switch (yytype)
       case 59: // "tk_number"
       case 62: // STRING
       case 63: // DATA
-      case 70: // PARAM
-      case 71: // BOOLEAN_PARAM
+      case 71: // PARAM
+      case 72: // BOOLEAN_PARAM
         value.copy< std::string > (YY_MOVE (that.value));
         break;
 
@@ -2319,8 +2319,8 @@ switch (yytype)
       case 59: // "tk_number"
       case 62: // STRING
       case 63: // DATA
-      case 70: // PARAM
-      case 71: // BOOLEAN_PARAM
+      case 71: // PARAM
+      case 72: // BOOLEAN_PARAM
         value.move< std::string > (YY_MOVE (s.value));
         break;
 

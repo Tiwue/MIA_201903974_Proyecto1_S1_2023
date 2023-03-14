@@ -40,8 +40,7 @@ unmount >id=741Disco1
 mkfs >type=full >id=745Disco1
 mkfs >fs=3fs >type=full >id=744Disco1
 
-rep >id=745Disco1 >path=/home/user/reports/inodos1.jpg >name=inode
-rep >id=744Disco1 >path=/home/user/reports/inodos2.jpg >name=inode
+
 
 login >user=root >pass=123 >id=744Disco1
 login >user="mi usuario" >pass="mi pwd" >id=744Disco1
@@ -51,11 +50,10 @@ pause
 mkgrp >name=usuarios
 mkusr >user=user1 >pass=usuario >grp=usuarios
 
-mkgrp >name=usuarios
-rmgrp >name=usuarios
-rmgrp >name=usuarios
 
-mkusr >user=user1 >pass=usuario >grp=usuarios2
-rmusr >user=user1
-rmusr >user=user1
+mkfile >size=15 >path=/home/user/docs/a.txt >r
+mkfile >path="/home/mis documentos/archivo 1.txt"
+mkfile >path=/home/user/docs/b.txt >r >cont=/home/steven/Escritorio/Protecto1_2023/MIA_201903974_Proyecto1_S1_2023/Results/content.txt
 
+rep >id=745Disco1 >path=/home/user/reports/inodos1.jpg >name=inode
+rep >id=744Disco1 >path=/home/user/reports/inodos2.jpg >name=inode

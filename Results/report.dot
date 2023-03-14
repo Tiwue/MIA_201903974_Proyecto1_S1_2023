@@ -26,24 +26,24 @@ edge [style="invis"];
 
 <TR>
 <TD HEIGHT="30" >i_s</TD>
-<TD WIDTH="100" >27</TD>
+<TD WIDTH="100" >46</TD>
 </TR>
 
 <TR>
 <TD HEIGHT="30" >i_atime</TD>
-<TD WIDTH="100" >Thu Mar 16 00:21:59 2023
+<TD WIDTH="100" >Fri Mar 17 00:00:57 2023
 </TD>
 </TR>
 
 <TR>
 <TD HEIGHT="30" >i_ctime</TD>
-<TD WIDTH="100" >Thu Mar 16 00:21:59 2023
+<TD WIDTH="100" >Fri Mar 17 00:00:57 2023
 </TD>
 </TR>
 
 <TR>
 <TD HEIGHT="30" >i_mtime</TD>
-<TD WIDTH="100" >Thu Mar 16 00:21:59 2023
+<TD WIDTH="100" >Fri Mar 17 00:00:57 2023
 </TD>
 </TR>
 
@@ -138,7 +138,7 @@ edge [style="invis"];
 
 <TR>
 <TD HEIGHT="30" >i_uid</TD>
-<TD WIDTH="100" >1</TD>
+<TD WIDTH="100" >0</TD>
 </TR>
 
 <TR>
@@ -148,24 +148,24 @@ edge [style="invis"];
 
 <TR>
 <TD HEIGHT="30" >i_s</TD>
-<TD WIDTH="100" >27</TD>
+<TD WIDTH="100" >67</TD>
 </TR>
 
 <TR>
 <TD HEIGHT="30" >i_atime</TD>
-<TD WIDTH="100" >Thu Mar 16 00:21:59 2023
+<TD WIDTH="100" >Fri Mar 17 00:00:57 2023
 </TD>
 </TR>
 
 <TR>
 <TD HEIGHT="30" >i_ctime</TD>
-<TD WIDTH="100" >Thu Mar 16 00:21:59 2023
+<TD WIDTH="100" >Fri Mar 17 00:00:57 2023
 </TD>
 </TR>
 
 <TR>
 <TD HEIGHT="30" >i_mtime</TD>
-<TD WIDTH="100" >Thu Mar 16 00:21:59 2023
+<TD WIDTH="100" >Fri Mar 17 00:00:57 2023
 </TD>
 </TR>
 
@@ -176,7 +176,7 @@ edge [style="invis"];
 
 <TR>
 <TD>i_block_1</TD>
-<TD>-1</TD>
+<TD>2</TD>
 </TR>
 
 <TR>
@@ -252,6 +252,128 @@ edge [style="invis"];
 <TR>
 <TD>i_perm</TD>
 <TD>700</TD>
+</TR>
+
+<TR>
+<TD colspan="2" BGCOLOR="brown1" ALIGN="center">Inodo_2</TD>
+</TR>
+
+<TR>
+<TD HEIGHT="30" >i_uid</TD>
+<TD WIDTH="100" >1</TD>
+</TR>
+
+<TR>
+<TD HEIGHT="30" >I_gid</TD>
+<TD WIDTH="100" >1</TD>
+</TR>
+
+<TR>
+<TD HEIGHT="30" >i_s</TD>
+<TD WIDTH="100" >64</TD>
+</TR>
+
+<TR>
+<TD HEIGHT="30" >i_atime</TD>
+<TD WIDTH="100" >Fri Mar 17 00:01:02 2023
+</TD>
+</TR>
+
+<TR>
+<TD HEIGHT="30" >i_ctime</TD>
+<TD WIDTH="100" >Fri Mar 17 00:01:02 2023
+</TD>
+</TR>
+
+<TR>
+<TD HEIGHT="30" >i_mtime</TD>
+<TD WIDTH="100" >Fri Mar 17 00:01:02 2023
+</TD>
+</TR>
+
+<TR>
+<TD>i_block_0</TD>
+<TD>3</TD>
+</TR>
+
+<TR>
+<TD>i_block_1</TD>
+<TD>-1</TD>
+</TR>
+
+<TR>
+<TD>i_block_2</TD>
+<TD>-1</TD>
+</TR>
+
+<TR>
+<TD>i_block_3</TD>
+<TD>-1</TD>
+</TR>
+
+<TR>
+<TD>i_block_4</TD>
+<TD>-1</TD>
+</TR>
+
+<TR>
+<TD>i_block_5</TD>
+<TD>-1</TD>
+</TR>
+
+<TR>
+<TD>i_block_6</TD>
+<TD>-1</TD>
+</TR>
+
+<TR>
+<TD>i_block_7</TD>
+<TD>-1</TD>
+</TR>
+
+<TR>
+<TD>i_block_8</TD>
+<TD>-1</TD>
+</TR>
+
+<TR>
+<TD>i_block_9</TD>
+<TD>-1</TD>
+</TR>
+
+<TR>
+<TD>i_block_10</TD>
+<TD>-1</TD>
+</TR>
+
+<TR>
+<TD>i_block_11</TD>
+<TD>-1</TD>
+</TR>
+
+<TR>
+<TD>i_block_12</TD>
+<TD>-1</TD>
+</TR>
+
+<TR>
+<TD>i_block_13</TD>
+<TD>-1</TD>
+</TR>
+
+<TR>
+<TD>i_block_14</TD>
+<TD>-1</TD>
+</TR>
+
+<TR>
+<TD>i_type</TD>
+<TD>48</TD>
+</TR>
+
+<TR>
+<TD>i_perm</TD>
+<TD>664</TD>
 </TR>
 
 </TABLE>>];
