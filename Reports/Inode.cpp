@@ -102,6 +102,7 @@ std::string Inode::getDotInode(FILE *_file, int _index_inode, int _start_inodes,
                         // std::cout << _name << std::endl;
                         _index_inode = file_block.b_content[j].b_inodo;
                         _dot = getDotInode(_file, _index_inode, _start_inodes, _start_blocks, _dot, _name);
+
                     }
                 }
             }

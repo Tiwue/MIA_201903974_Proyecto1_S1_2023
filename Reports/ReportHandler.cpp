@@ -8,6 +8,7 @@
 #include "DiskReport.h"
 #include "../Utils/Variables.h"
 #include "Inode.h"
+#include "Block.h"
 
 
 
@@ -54,6 +55,9 @@ void ReportHandler::executeReportHandler() {
         if (_name == "inode") {
             Inode *inode = new Inode(mounted);
             grafo = inode->getReport();
+        }else if (_name == "block") {
+            Block *block = new Block(mounted);
+            grafo = block->getReport();
         }
         else
             return coutError("El nombre del reporte a generar no es válido: " + _name, NULL);

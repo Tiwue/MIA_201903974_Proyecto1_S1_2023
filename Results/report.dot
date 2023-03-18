@@ -4,377 +4,220 @@ rankdir="TB";
 node [shape=plaintext fontname= "Ubuntu" fontsize="14"];
 edge [style="invis"];
 
-"Inodes Report" [margin="0.5" label = <
+"BLOCK_0" [ fontsize="17" label = <
 <TABLE BGCOLOR="white" BORDER="2" COLOR="BLACK" CELLBORDER="1" CELLSPACING="0">
 <TR>
-<TD HEIGHT="25" BGCOLOR="#B8860B" COLSPAN="2">REPORTE DE INODOS</TD>
+<TD BGCOLOR="#B8860B" COLSPAN="2">Bloque Carpeta 0</TD>
+</TR>
+<TR>
+<TD WIDTH="130" BGCOLOR="#708090"><B>b_name</B></TD>
+<TD WIDTH="70" BGCOLOR="#708090"><B>b_inodo</B></TD>
 </TR>
 
 <TR>
-<TD colspan="2" BGCOLOR="brown1" ALIGN="center">Inodo_0</TD>
-</TR>
-
-<TR>
-<TD HEIGHT="30" >i_uid</TD>
-<TD WIDTH="100" >1</TD>
-</TR>
-
-<TR>
-<TD HEIGHT="30" >I_gid</TD>
-<TD WIDTH="100" >1</TD>
-</TR>
-
-<TR>
-<TD HEIGHT="30" >i_s</TD>
-<TD WIDTH="100" >46</TD>
-</TR>
-
-<TR>
-<TD HEIGHT="30" >i_atime</TD>
-<TD WIDTH="100" >Fri Mar 17 00:00:57 2023
-</TD>
-</TR>
-
-<TR>
-<TD HEIGHT="30" >i_ctime</TD>
-<TD WIDTH="100" >Fri Mar 17 00:00:57 2023
-</TD>
-</TR>
-
-<TR>
-<TD HEIGHT="30" >i_mtime</TD>
-<TD WIDTH="100" >Fri Mar 17 00:00:57 2023
-</TD>
-</TR>
-
-<TR>
-<TD>i_block_0</TD>
+<TD ALIGN="left">   .</TD>
 <TD>0</TD>
 </TR>
 
 <TR>
-<TD>i_block_1</TD>
-<TD>-1</TD>
-</TR>
-
-<TR>
-<TD>i_block_2</TD>
-<TD>-1</TD>
-</TR>
-
-<TR>
-<TD>i_block_3</TD>
-<TD>-1</TD>
-</TR>
-
-<TR>
-<TD>i_block_4</TD>
-<TD>-1</TD>
-</TR>
-
-<TR>
-<TD>i_block_5</TD>
-<TD>-1</TD>
-</TR>
-
-<TR>
-<TD>i_block_6</TD>
-<TD>-1</TD>
-</TR>
-
-<TR>
-<TD>i_block_7</TD>
-<TD>-1</TD>
-</TR>
-
-<TR>
-<TD>i_block_8</TD>
-<TD>-1</TD>
-</TR>
-
-<TR>
-<TD>i_block_9</TD>
-<TD>-1</TD>
-</TR>
-
-<TR>
-<TD>i_block_10</TD>
-<TD>-1</TD>
-</TR>
-
-<TR>
-<TD>i_block_11</TD>
-<TD>-1</TD>
-</TR>
-
-<TR>
-<TD>i_block_12</TD>
-<TD>-1</TD>
-</TR>
-
-<TR>
-<TD>i_block_13</TD>
-<TD>-1</TD>
-</TR>
-
-<TR>
-<TD>i_block_14</TD>
-<TD>-1</TD>
-</TR>
-
-<TR>
-<TD>i_type</TD>
+<TD ALIGN="left">   ..</TD>
 <TD>0</TD>
 </TR>
 
 <TR>
-<TD>i_perm</TD>
-<TD>777</TD>
-</TR>
-
-<TR>
-<TD colspan="2" BGCOLOR="brown1" ALIGN="center">Inodo_1</TD>
-</TR>
-
-<TR>
-<TD HEIGHT="30" >i_uid</TD>
-<TD WIDTH="100" >0</TD>
-</TR>
-
-<TR>
-<TD HEIGHT="30" >I_gid</TD>
-<TD WIDTH="100" >1</TD>
-</TR>
-
-<TR>
-<TD HEIGHT="30" >i_s</TD>
-<TD WIDTH="100" >67</TD>
-</TR>
-
-<TR>
-<TD HEIGHT="30" >i_atime</TD>
-<TD WIDTH="100" >Fri Mar 17 00:00:57 2023
-</TD>
-</TR>
-
-<TR>
-<TD HEIGHT="30" >i_ctime</TD>
-<TD WIDTH="100" >Fri Mar 17 00:00:57 2023
-</TD>
-</TR>
-
-<TR>
-<TD HEIGHT="30" >i_mtime</TD>
-<TD WIDTH="100" >Fri Mar 17 00:00:57 2023
-</TD>
-</TR>
-
-<TR>
-<TD>i_block_0</TD>
+<TD ALIGN="left">   users.txt</TD>
 <TD>1</TD>
 </TR>
 
 <TR>
-<TD>i_block_1</TD>
+<TD ALIGN="left">   home</TD>
+<TD>2</TD>
+</TR>
+
+</TABLE>>];
+
+"BLOCK_1" [ fontsize="17" label = <
+<TABLE BGCOLOR="white"  BORDER="2" COLOR="BLACK" CELLBORDER="1" CELLSPACING="0">
+<TR>
+<TD WIDTH="190" BGCOLOR="#708090">Bloque Archivo 1</TD>
+</TR>
+
+<TR>
+<TD>
+1,G,root \n 1,U,root,root,123 \n 2,G,usuarios \n 2,U,usuarios,user1,usuar \n 
+</TD>
+</TR>
+
+</TABLE>>];
+
+"BLOCK_2" [ fontsize="17" label = <
+<TABLE BGCOLOR="white"  BORDER="2" COLOR="BLACK" CELLBORDER="1" CELLSPACING="0">
+<TR>
+<TD WIDTH="190" BGCOLOR="#708090">Bloque Archivo 2</TD>
+</TR>
+
+<TR>
+<TD>
+io \n 
+</TD>
+</TR>
+
+</TABLE>>];
+
+"BLOCK_3" [ fontsize="17" label = <
+<TABLE BGCOLOR="white" BORDER="2" COLOR="BLACK" CELLBORDER="1" CELLSPACING="0">
+<TR>
+<TD BGCOLOR="#B8860B" COLSPAN="2">Bloque Carpeta 3</TD>
+</TR>
+<TR>
+<TD WIDTH="130" BGCOLOR="#708090"><B>b_name</B></TD>
+<TD WIDTH="70" BGCOLOR="#708090"><B>b_inodo</B></TD>
+</TR>
+
+<TR>
+<TD ALIGN="left">   .</TD>
 <TD>2</TD>
 </TR>
 
 <TR>
-<TD>i_block_2</TD>
-<TD>-1</TD>
+<TD ALIGN="left">   ..</TD>
+<TD>0</TD>
 </TR>
 
 <TR>
-<TD>i_block_3</TD>
-<TD>-1</TD>
-</TR>
-
-<TR>
-<TD>i_block_4</TD>
-<TD>-1</TD>
-</TR>
-
-<TR>
-<TD>i_block_5</TD>
-<TD>-1</TD>
-</TR>
-
-<TR>
-<TD>i_block_6</TD>
-<TD>-1</TD>
-</TR>
-
-<TR>
-<TD>i_block_7</TD>
-<TD>-1</TD>
-</TR>
-
-<TR>
-<TD>i_block_8</TD>
-<TD>-1</TD>
-</TR>
-
-<TR>
-<TD>i_block_9</TD>
-<TD>-1</TD>
-</TR>
-
-<TR>
-<TD>i_block_10</TD>
-<TD>-1</TD>
-</TR>
-
-<TR>
-<TD>i_block_11</TD>
-<TD>-1</TD>
-</TR>
-
-<TR>
-<TD>i_block_12</TD>
-<TD>-1</TD>
-</TR>
-
-<TR>
-<TD>i_block_13</TD>
-<TD>-1</TD>
-</TR>
-
-<TR>
-<TD>i_block_14</TD>
-<TD>-1</TD>
-</TR>
-
-<TR>
-<TD>i_type</TD>
-<TD>1</TD>
-</TR>
-
-<TR>
-<TD>i_perm</TD>
-<TD>700</TD>
-</TR>
-
-<TR>
-<TD colspan="2" BGCOLOR="brown1" ALIGN="center">Inodo_2</TD>
-</TR>
-
-<TR>
-<TD HEIGHT="30" >i_uid</TD>
-<TD WIDTH="100" >1</TD>
-</TR>
-
-<TR>
-<TD HEIGHT="30" >I_gid</TD>
-<TD WIDTH="100" >1</TD>
-</TR>
-
-<TR>
-<TD HEIGHT="30" >i_s</TD>
-<TD WIDTH="100" >64</TD>
-</TR>
-
-<TR>
-<TD HEIGHT="30" >i_atime</TD>
-<TD WIDTH="100" >Fri Mar 17 00:01:02 2023
-</TD>
-</TR>
-
-<TR>
-<TD HEIGHT="30" >i_ctime</TD>
-<TD WIDTH="100" >Fri Mar 17 00:01:02 2023
-</TD>
-</TR>
-
-<TR>
-<TD HEIGHT="30" >i_mtime</TD>
-<TD WIDTH="100" >Fri Mar 17 00:01:02 2023
-</TD>
-</TR>
-
-<TR>
-<TD>i_block_0</TD>
+<TD ALIGN="left">   user</TD>
 <TD>3</TD>
 </TR>
 
 <TR>
-<TD>i_block_1</TD>
-<TD>-1</TD>
-</TR>
-
-<TR>
-<TD>i_block_2</TD>
-<TD>-1</TD>
-</TR>
-
-<TR>
-<TD>i_block_3</TD>
-<TD>-1</TD>
-</TR>
-
-<TR>
-<TD>i_block_4</TD>
-<TD>-1</TD>
-</TR>
-
-<TR>
-<TD>i_block_5</TD>
-<TD>-1</TD>
-</TR>
-
-<TR>
-<TD>i_block_6</TD>
-<TD>-1</TD>
-</TR>
-
-<TR>
-<TD>i_block_7</TD>
-<TD>-1</TD>
-</TR>
-
-<TR>
-<TD>i_block_8</TD>
-<TD>-1</TD>
-</TR>
-
-<TR>
-<TD>i_block_9</TD>
-<TD>-1</TD>
-</TR>
-
-<TR>
-<TD>i_block_10</TD>
-<TD>-1</TD>
-</TR>
-
-<TR>
-<TD>i_block_11</TD>
-<TD>-1</TD>
-</TR>
-
-<TR>
-<TD>i_block_12</TD>
-<TD>-1</TD>
-</TR>
-
-<TR>
-<TD>i_block_13</TD>
-<TD>-1</TD>
-</TR>
-
-<TR>
-<TD>i_block_14</TD>
-<TD>-1</TD>
-</TR>
-
-<TR>
-<TD>i_type</TD>
-<TD>48</TD>
-</TR>
-
-<TR>
-<TD>i_perm</TD>
-<TD>664</TD>
+<TD ALIGN="left">   documentos</TD>
+<TD>6</TD>
 </TR>
 
 </TABLE>>];
+
+"BLOCK_4" [ fontsize="17" label = <
+<TABLE BGCOLOR="white" BORDER="2" COLOR="BLACK" CELLBORDER="1" CELLSPACING="0">
+<TR>
+<TD BGCOLOR="#B8860B" COLSPAN="2">Bloque Carpeta 4</TD>
+</TR>
+<TR>
+<TD WIDTH="130" BGCOLOR="#708090"><B>b_name</B></TD>
+<TD WIDTH="70" BGCOLOR="#708090"><B>b_inodo</B></TD>
+</TR>
+
+<TR>
+<TD ALIGN="left">   .</TD>
+<TD>3</TD>
+</TR>
+
+<TR>
+<TD ALIGN="left">   ..</TD>
+<TD>2</TD>
+</TR>
+
+<TR>
+<TD ALIGN="left">   docs</TD>
+<TD>4</TD>
+</TR>
+
+<TR>
+<TD ALIGN="left">   </TD>
+<TD>-1</TD>
+</TR>
+
+</TABLE>>];
+
+"BLOCK_5" [ fontsize="17" label = <
+<TABLE BGCOLOR="white" BORDER="2" COLOR="BLACK" CELLBORDER="1" CELLSPACING="0">
+<TR>
+<TD BGCOLOR="#B8860B" COLSPAN="2">Bloque Carpeta 5</TD>
+</TR>
+<TR>
+<TD WIDTH="130" BGCOLOR="#708090"><B>b_name</B></TD>
+<TD WIDTH="70" BGCOLOR="#708090"><B>b_inodo</B></TD>
+</TR>
+
+<TR>
+<TD ALIGN="left">   .</TD>
+<TD>4</TD>
+</TR>
+
+<TR>
+<TD ALIGN="left">   ..</TD>
+<TD>3</TD>
+</TR>
+
+<TR>
+<TD ALIGN="left">   a.txt</TD>
+<TD>5</TD>
+</TR>
+
+<TR>
+<TD ALIGN="left">   b.txt</TD>
+<TD>8</TD>
+</TR>
+
+</TABLE>>];
+
+"BLOCK_6" [ fontsize="17" label = <
+<TABLE BGCOLOR="white"  BORDER="2" COLOR="BLACK" CELLBORDER="1" CELLSPACING="0">
+<TR>
+<TD WIDTH="190" BGCOLOR="#708090">Bloque Archivo 6</TD>
+</TR>
+
+<TR>
+<TD>
+012345678901234
+</TD>
+</TR>
+
+</TABLE>>];
+
+"BLOCK_9" [ fontsize="17" label = <
+<TABLE BGCOLOR="white"  BORDER="2" COLOR="BLACK" CELLBORDER="1" CELLSPACING="0">
+<TR>
+<TD WIDTH="190" BGCOLOR="#708090">Bloque Archivo 9</TD>
+</TR>
+
+<TR>
+<TD>
+123 \n 
+</TD>
+</TR>
+
+</TABLE>>];
+
+"BLOCK_7" [ fontsize="17" label = <
+<TABLE BGCOLOR="white" BORDER="2" COLOR="BLACK" CELLBORDER="1" CELLSPACING="0">
+<TR>
+<TD BGCOLOR="#B8860B" COLSPAN="2">Bloque Carpeta 7</TD>
+</TR>
+<TR>
+<TD WIDTH="130" BGCOLOR="#708090"><B>b_name</B></TD>
+<TD WIDTH="70" BGCOLOR="#708090"><B>b_inodo</B></TD>
+</TR>
+
+<TR>
+<TD ALIGN="left">   .</TD>
+<TD>6</TD>
+</TR>
+
+<TR>
+<TD ALIGN="left">   ..</TD>
+<TD>2</TD>
+</TR>
+
+<TR>
+<TD ALIGN="left">   archivo1.txt</TD>
+<TD>0</TD>
+</TR>
+
+<TR>
+<TD ALIGN="left">   </TD>
+<TD>-1</TD>
+</TR>
+
+</TABLE>>];
+
 }

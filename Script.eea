@@ -52,8 +52,8 @@ mkusr >user=user1 >pass=usuario >grp=usuarios
 
 
 mkfile >size=15 >path=/home/user/docs/a.txt >r
-mkfile >path="/home/mis documentos/archivo 1.txt"
+mkfile >path="/home/documentos/archivo1.txt" >r
 mkfile >path=/home/user/docs/b.txt >r >cont=/home/steven/Escritorio/Protecto1_2023/MIA_201903974_Proyecto1_S1_2023/Results/content.txt
 
-rep >id=745Disco1 >path=/home/user/reports/inodos1.jpg >name=inode
 rep >id=744Disco1 >path=/home/user/reports/inodos2.jpg >name=inode
+rep >id=744Disco1 >path=/home/user/reports/block.jpg >name=block

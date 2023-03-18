@@ -182,7 +182,7 @@ void MkFile::createFile(std::string _path, std::string _name, bool _r, int _size
     /* Llenar el nuevo inodo de archivo */
     new_inode.i_block[0] = free_block;
     new_inode.i_s = i_size;
-    new_inode.i_type = '1';
+    new_inode.i_type = 1;
     new_inode.i_gid = _user_logged.GID;
     new_inode.i_uid = _user_logged.UID;
     new_inode.i_perm = 664;
