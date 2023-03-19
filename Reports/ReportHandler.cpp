@@ -9,6 +9,9 @@
 #include "../Utils/Variables.h"
 #include "Inode.h"
 #include "Block.h"
+#include "BMBlock.h"
+#include "BMInode.h"
+
 
 
 
@@ -58,6 +61,14 @@ void ReportHandler::executeReportHandler() {
         }else if (_name == "block") {
             Block *block = new Block(mounted);
             grafo = block->getReport();
+        }
+        else if (_name == "bm_inode") {
+            BMInode *bmInode = new BMInode(mounted);
+            grafo = bmInode->getReport();
+        }
+        else if (_name == "bm_bloc") {
+            BMBlock *bmBlock = new BMBlock(mounted);
+            grafo = bmBlock->getReport();
         }
         else
             return coutError("El nombre del reporte a generar no es válido: " + _name, NULL);
