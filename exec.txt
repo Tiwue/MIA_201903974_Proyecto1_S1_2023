@@ -1,1 +1,1 @@
-rep >id=744Disco1 >path=/home/user/reports/BitMapBloque.jpg >name=bm_bloc
+rep >id=744Disco1 >path=/home/user/reports/BitMapBloque.jpg >name=sb

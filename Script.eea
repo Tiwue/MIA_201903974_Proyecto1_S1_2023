@@ -59,3 +59,4 @@ rep >id=744Disco1 >path=/home/user/reports/inodos2.jpg >name=inode
 rep >id=744Disco1 >path=/home/user/reports/block.jpg >name=block
 rep >id=744Disco1 >path=/home/user/reports/BitMapInodos.jpg >name=bm_inode
 rep >id=744Disco1 >path=/home/user/reports/BitMapBloque.jpg >name=bm_bloc
+rep >id=744Disco1 >path=/home/user/reports/BitMapBloque.jpg >name=sb

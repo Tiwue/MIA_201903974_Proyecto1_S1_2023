@@ -11,7 +11,7 @@
 #include "Block.h"
 #include "BMBlock.h"
 #include "BMInode.h"
-
+#include "SB.h"
 
 
 
@@ -69,6 +69,10 @@ void ReportHandler::executeReportHandler() {
         else if (_name == "bm_bloc") {
             BMBlock *bmBlock = new BMBlock(mounted);
             grafo = bmBlock->getReport();
+        }
+        else if (_name == "sb") {
+            SB *superBlock = new SB(mounted);
+            grafo = superBlock->getReport();
         }
         else
             return coutError("El nombre del reporte a generar no es válido: " + _name, NULL);
